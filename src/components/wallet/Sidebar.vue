@@ -76,6 +76,7 @@ export default {
 @use "../../main";
 
 .wallet_sidebar {
+    border-right: 1px solid var(--bg-wallet-lighter);
     .stick {
         display: flex;
         flex-direction: column;
@@ -116,7 +117,7 @@ export default {
         a.router-link-exact-active {
             color: var(--primary-color) !important;
             opacity: 1;
-            background-color: var(--bg-wallet);
+            background-color: var(--bg-wallet-lighter);
 
             img {
                 opacity: 1;
