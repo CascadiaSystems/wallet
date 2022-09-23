@@ -140,7 +140,7 @@ export default new Vuex.Store({
 
             store.dispatch('Assets/updateAvaAsset')
             store.dispatch('Platform/update')
-            router.push('/wallet')
+            router.push('/wallet/cross_chain')
             store.dispatch('Assets/updateUTXOs')
         },
 
