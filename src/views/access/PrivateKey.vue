@@ -5,7 +5,7 @@
             <form @submit.prevent="access">
                 <v-text-field
                     class="pass"
-                    label="Private Key"
+                    label="Input your Private Key"
                     dense
                     solo
                     flat
@@ -14,17 +14,19 @@
                     hide-details
                 ></v-text-field>
                 <p class="err">{{ error }}</p>
-                <v-btn
-                    class="ava_button button_primary"
+                <button
+                    class="accept_button"
                     @click="access"
                     :loading="isLoading"
                     :disabled="!canSubmit"
                     depressed
                 >
                     Access Wallet
-                </v-btn>
+                </button>
+                <button class="link">
+                    <router-link to="/access">Cancel</router-link>
+                </button>
             </form>
-            <router-link to="/access" class="link">Cancel</router-link>
         </div>
     </div>
 </template>
@@ -77,14 +79,28 @@ export default class PrivateKey extends Vue {
 @use '../../main';
 .pass {
     background-color: var(--bg) !important;
+    border: 1px solid #3A3B3C
 }
-.ava_button {
+.accept_button {
     width: 100%;
     margin-bottom: 22px;
+    background-color: #E4E6EB;
+    color: #3A3B3C;
+    border-radius: 0px;
+    width: 100%;
+    padding: 10px 24px;
+    min-width: 140px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase !important;
+    &:disabled {
+        opacity: .8;
+    }
 }
 .access_card {
     /*max-width: 80vw;*/
-    background-color: var(--bg-light);
+    // background-color: var(--bg-light);
     padding: main.$container-padding;
     width: 100%;
     /*max-width: 240px;*/
@@ -119,6 +135,26 @@ a {
 }
 .link {
     color: var(--secondary-color);
+    border: 1px solid #3A3B3C;
+    border-radius: 0px;
+    width: 100%;
+    padding: 10px 24px;
+    min-width: 140px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase !important;
+    a {
+        text-decoration: none !important;
+    }
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    &:disabled {
+        opacity: 0.5 !important;
+    }
 }
 .remember {
     margin: 12px 0;
