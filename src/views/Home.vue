@@ -31,9 +31,6 @@
                                 </router-link>
                             </div>
                         </div>
-
-                        <ToS style="margin: 20px !important"></ToS>
-                        <router-link to="/" class="link">{{ $t('access.cancel') }}</router-link>
                     </div>
                 </b-col>
             </b-row>
@@ -44,11 +41,11 @@
 <script lang="ts">
 import 'reflect-metadata'
 import { Vue, Component, Prop } from 'vue-property-decorator'
-import ToS from '@/components/misc/ToS.vue'
+import ImageDayNight from '@/components/misc/ImageDayNight.vue'
 
 @Component({
     name: 'home',
-    components: { ToS },
+    components: { ImageDayNight },
 })
 export default class Home extends Vue {}
 </script>
@@ -57,6 +54,12 @@ export default class Home extends Vue {}
 @use "../main";
 @use '/src/components/Access/menu';
 
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 .access_card {
     margin: 0px auto;
     display: flex;
@@ -80,10 +83,6 @@ hr {
     margin: main.$vertical-padding auto 0;
     color: main.$primary-color-light;
     opacity: 0.2;
-}
-
-.accounts_menu {
-    margin-bottom: 30px;
 }
 
 .options {
