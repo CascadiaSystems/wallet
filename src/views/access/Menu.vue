@@ -1,39 +1,26 @@
 <template>
-    <div class="access_card">
-        <h1>{{ $t('access.title') }}</h1>
-        <router-link to="/create" class="link">{{ $t('access.create') }}</router-link>
-        <div class="menus">
-            <AccountsFound class="accounts_menu"></AccountsFound>
-            <div class="options">
-                <router-link to="/access/privatekey" class="menu_option button_primary">
-                    {{ $t('access.but_private_key') }}
-                    <ImageDayNight
-                        day="/img/access_icons/day/privatekey.svg"
-                        night="/img/access_icons/night/privatekey.svg"
-                    ></ImageDayNight>
-                </router-link>
-                <router-link to="/access/mnemonic" class="menu_option button_primary">
-                    {{ $t('access.but_mnemonic') }}
-                    <ImageDayNight
-                        day="/img/access_icons/day/mnemonic.svg"
-                        night="/img/access_icons/night/mnemonic.svg"
-                    ></ImageDayNight>
-                </router-link>
-                <router-link to="/access/keystore" class="menu_option button_primary">
-                    {{ $t('access.but_keystore') }}
-                    <ImageDayNight
-                        day="/img/access_icons/day/keystore.svg"
-                        night="/img/access_icons/night/keystore.svg"
-                    ></ImageDayNight>
-                </router-link>
-                <LedgerButton class="menu_option button_primary"></LedgerButton>
-                <!--            <TorusGoogle class="option button_primary" text="Google"></TorusGoogle>-->
-            </div>
-        </div>
-
-        <ToS style="margin: 20px !important"></ToS>
-        <router-link to="/" class="link">{{ $t('access.cancel') }}</router-link>
-    </div>
+	<div class="access_card">
+			<div class="menus">
+					<AccountsFound class="accounts_menu"></AccountsFound>
+					<div class="options">
+							<router-link to="/access/privatekey" class="menu_option button_primary">
+									{{ $t('access.but_private_key') }}
+									<ImageDayNight
+											day="/img/access_icons/day/access.svg"
+											night="/img/access_icons/night/access.svg"
+									></ImageDayNight>
+							</router-link>
+							<router-link to="/access/mnemonic" class="menu_option button_primary">
+									{{ $t('access.but_mnemonic') }}
+									<ImageDayNight
+											day="/img/access_icons/day/create.svg"
+											night="/img/access_icons/night/create.svg"
+									></ImageDayNight>
+							</router-link>
+					</div>
+			</div>
+			<router-link to="/" class="link">{{ $t('access.cancel') }}</router-link>
+	</div>
 </template>
 
 <script lang="ts">
@@ -44,12 +31,12 @@ import ToS from '@/components/misc/ToS.vue'
 import ImageDayNight from '@/components/misc/ImageDayNight.vue'
 
 @Component({
-    components: {
-        ImageDayNight,
-        ToS,
-        LedgerButton,
-        AccountsFound,
-    },
+	components: {
+			ImageDayNight,
+			ToS,
+			LedgerButton,
+			AccountsFound,
+	},
 })
 export default class Menu extends Vue {}
 </script>
@@ -59,59 +46,59 @@ export default class Menu extends Vue {}
 @use '/src/components/Access/menu';
 
 .access_card {
-    //background-color: var(--bg-light) !important;
-    //padding: main.$container-padding;
-    margin: 0px auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	//background-color: var(--bg-light) !important;
+	//padding: main.$container-padding;
+	margin: 0px auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 img {
-    width: main.$img-size;
-    height: main.$img-size;
-    margin-bottom: main.$vertical-padding;
+	width: main.$img-size;
+	height: main.$img-size;
+	margin-bottom: main.$vertical-padding;
 }
 
 h1 {
-    font-size: main.$l-size;
-    font-weight: 400;
+	font-size: main.$l-size;
+	font-weight: 400;
 }
 
 hr {
-    max-width: 67% !important;
-    margin: main.$vertical-padding auto 0;
-    color: main.$primary-color-light;
-    opacity: 0.2;
+	max-width: 67% !important;
+	margin: main.$vertical-padding auto 0;
+	color: main.$primary-color-light;
+	opacity: 0.2;
 }
 
 .accounts_menu {
-    margin-bottom: 30px;
+	margin-bottom: 30px;
 }
 
 .options {
-    display: flex;
-    flex-direction: column;
-    //display: grid;
-    //grid-template-columns: repeat(4, 1fr);
-    //grid-gap: 30px;
+	display: flex;
+	flex-direction: column;
+	//display: grid;
+	//grid-template-columns: repeat(4, 1fr);
+	//grid-gap: 30px;
 }
 
 .menu_option {
-    justify-content: space-between;
-    align-items: center;
-    img {
-        width: 24px;
-        height: 24px;
-        margin: 0;
-        object-fit: contain;
-    }
+	justify-content: space-between;
+	align-items: center;
+	img {
+			width: 24px;
+			height: 24px;
+			margin: 0;
+			object-fit: contain;
+	}
 }
 
 .menus {
-    width: 440px;
-    max-width: 100%;
-    margin-top: 1em;
+	width: 440px;
+	max-width: 100%;
+	margin-top: 1em;
 }
 
 //.option {
@@ -138,29 +125,29 @@ hr {
 //}
 
 @include main.mobile-device {
-    img {
-        width: main.$img-size-mobile;
-        height: main.$img-size-mobile;
-        margin-bottom: main.$vertical-padding-mobile;
-    }
+	img {
+			width: main.$img-size-mobile;
+			height: main.$img-size-mobile;
+			margin-bottom: main.$vertical-padding-mobile;
+	}
 
-    h1 {
-        font-size: main.$l-size-mobile;
-    }
+	h1 {
+			font-size: main.$l-size-mobile;
+	}
 
-    .card {
-        padding: main.$container-padding-mobile;
-    }
+	.card {
+			padding: main.$container-padding-mobile;
+	}
 
-    .options {
-        display: block;
-        grid-template-columns: none;
-    }
+	.options {
+			display: block;
+			grid-template-columns: none;
+	}
 
-    //.option {
-    //    width: 100%;
-    //    margin: 12px 0px;
-    //    display: block;
-    //}
+	//.option {
+	//    width: 100%;
+	//    margin: 12px 0px;
+	//    display: block;
+	//}
 }
 </style>
