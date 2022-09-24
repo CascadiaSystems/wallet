@@ -42,7 +42,7 @@
         </div>
         <div class="confirmation_val" v-else>
             <label>{{ $t('earn.transfer.amount') }}</label>
-            <p>{{ formAmtText }} AVAX</p>
+            <p>{{ formAmtText }} SOPHON</p>
         </div>
     </div>
 </template>
@@ -61,8 +61,8 @@ import { AvaNetwork } from '@/js/AvaNetwork'
 
 const chainTypes: ChainIdType[] = ['X', 'P', 'C']
 const chainNames = {
-    X: 'X Chain',
-    C: 'C Chain',
+    X: 'N Chain',
+    C: 'E Chain',
     P: 'P Chain',
 }
 

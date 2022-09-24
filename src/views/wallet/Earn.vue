@@ -53,7 +53,7 @@
                             {{ $t('earn.delegate_card.submit') }}
                         </v-btn>
                     </div>
-                    <div>
+                    <!-- <div>
                         <h4 class="title">
                             {{ $t('earn.transfer_card.title') }}
                         </h4>
@@ -69,7 +69,7 @@
                         >
                             {{ $t('earn.transfer_card.submit') }}
                         </v-btn>
-                    </div>
+                    </div> -->
                     <div>
                         <h4 class="title">
                             {{ $t('earn.rewards_card.title') }}
@@ -238,7 +238,7 @@ export default class Earn extends Vue {
 .options {
     margin: 30px 0;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 14px;
     //display: flex;
     //justify-content: space-evenly;
