@@ -2,8 +2,10 @@
     <div class="wallet_sidebar">
         <div class="stick">
             <div class="brand">
-                <img v-if="$root.theme === 'day'" src="@/assets/wallet_logo.png" />
-                <img v-else src="@/assets/wallet_logo_dark.png" />
+                <!-- <img v-if="$root.theme === 'day'" src="@/assets/wallet_logo.png" />
+                <img v-else src="@/assets/wallet_logo_dark.png" /> -->
+                <div>SOPHON</div>
+                <div>WALLET</div>
             </div>
             <div class="links">
                 <router-link to="/wallet" class="wallet_link">
@@ -11,11 +13,11 @@
                     <img v-else src="@/assets/sidebar/portfolio_nav_night.png" />
                     {{ $t('wallet.sidebar.portfolio') }}
                 </router-link>
-                <router-link to="/wallet/transfer" data-cy="wallet_transfer" class="wallet_link">
+                <!-- <router-link to="/wallet/transfer" data-cy="wallet_transfer" class="wallet_link">
                     <img v-if="$root.theme === 'day'" src="@/assets/sidebar/transfer_nav.png" />
                     <img v-else src="@/assets/sidebar/transfer_nav_night.svg" />
                     {{ $t('wallet.sidebar.send') }}
-                </router-link>
+                </router-link> -->
                 <router-link
                     to="/wallet/cross_chain"
                     data-cy="wallet_export"
@@ -29,26 +31,26 @@
                     <img v-else src="@/assets/sidebar/earn_nav_night.png" />
                     {{ $t('wallet.sidebar.earn') }}
                 </router-link>
-                <router-link to="/wallet/studio" data-cy="wallet_studio" class="wallet_link">
+                <!-- <router-link to="/wallet/studio" data-cy="wallet_studio" class="wallet_link">
                     <img v-if="$root.theme === 'day'" src="@/assets/sidebar/studio_nav.svg" />
                     <img v-else src="@/assets/sidebar/studio_nav_night.svg" />
                     {{ $t('wallet.sidebar.studio') }}
-                </router-link>
-                <router-link to="/wallet/activity" data-cy="wallet_activity" class="wallet_link">
+                </router-link> -->
+                <!-- <router-link to="/wallet/activity" data-cy="wallet_activity" class="wallet_link">
                     <img v-if="$root.theme === 'day'" src="@/assets/sidebar/activity_nav.svg" />
                     <img v-else src="@/assets/sidebar/activity_nav_night.svg" />
                     {{ $t('wallet.sidebar.activity') }}
-                </router-link>
-                <router-link to="/wallet/keys" data-cy="wallet_manage" class="wallet_link">
+                </router-link> -->
+                <!-- <router-link to="/wallet/keys" data-cy="wallet_manage" class="wallet_link">
                     <img v-if="$root.theme === 'day'" src="@/assets/sidebar/manage_nav.png" />
                     <img v-else src="@/assets/sidebar/manage_nav_night.svg" />
                     {{ $t('wallet.sidebar.manage') }}
-                </router-link>
-                <router-link to="/wallet/advanced" data-cy="wallet_advanced" class="wallet_link">
+                </router-link> -->
+                <!-- <router-link to="/wallet/advanced" data-cy="wallet_advanced" class="wallet_link">
                     <img v-if="$root.theme === 'day'" src="@/assets/sidebar/advanced_nav.png" />
                     <img v-else src="@/assets/sidebar/advanced_nav_night.png" />
                     {{ $t('wallet.sidebar.advanced') }}
-                </router-link>
+                </router-link> -->
             </div>
             <div class="bottom">
                 <AccountMenu class="wallet_link"></AccountMenu>
@@ -85,9 +87,10 @@ export default {
     .brand {
         height: 150px;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-
+        font-size: 24px;
         img {
             width: 80%;
             object-fit: contain;

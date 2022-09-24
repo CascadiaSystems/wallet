@@ -1,7 +1,7 @@
 <template>
     <modal ref="modal" title="Export AVAX Transfers" class="modal_main">
         <div class="csv_modal_body">
-            <p>Export AVAX transactions including cross chain transfers on X,P and C chains.</p>
+            <p>Export SOPHON transactions including cross chain transfers on X,P and C chains.</p>
             <p class="err" v-if="error">{{ error }}</p>
             <v-btn
                 class="button_secondary"
@@ -95,7 +95,7 @@ export default class ExportAvaxCsvModal extends Vue {
             const csvContent = createCsvNormal(hist)
             downloadCSVFile(encoding + csvContent, 'avax_transfers')
         } catch (e) {
-            this.error = e
+            this?.error = e
         }
         this.isLoading = false
     }

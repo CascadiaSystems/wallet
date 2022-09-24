@@ -53,7 +53,7 @@
                             {{ $t('earn.delegate_card.submit') }}
                         </v-btn>
                     </div>
-                    <div>
+                    <!-- <div>
                         <h4 class="title">
                             {{ $t('earn.transfer_card.title') }}
                         </h4>
@@ -69,7 +69,7 @@
                         >
                             {{ $t('earn.transfer_card.submit') }}
                         </v-btn>
-                    </div>
+                    </div> -->
                     <div>
                         <h4 class="title">
                             {{ $t('earn.rewards_card.title') }}

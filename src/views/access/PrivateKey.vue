@@ -79,13 +79,13 @@ export default class PrivateKey extends Vue {
 @use '../../main';
 .pass {
     background-color: var(--bg) !important;
-    border: 1px solid #3A3B3C
+    border: 1px solid #3a3b3c;
 }
 .accept_button {
     width: 100%;
     margin-bottom: 22px;
-    background-color: #E4E6EB;
-    color: #3A3B3C;
+    background-color: #e4e6eb;
+    color: #3a3b3c;
     border-radius: 0px;
     width: 100%;
     padding: 10px 24px;
@@ -95,7 +95,7 @@ export default class PrivateKey extends Vue {
     letter-spacing: 0.5px;
     text-transform: uppercase !important;
     &:disabled {
-        opacity: .8;
+        opacity: 0.8;
     }
 }
 .access_card {
@@ -135,7 +135,7 @@ a {
 }
 .link {
     color: var(--secondary-color);
-    border: 1px solid #3A3B3C;
+    border: 1px solid #3a3b3c;
     border-radius: 0px;
     width: 100%;
     padding: 10px 24px;
