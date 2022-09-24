@@ -144,6 +144,7 @@ body {
 
 p {
     margin: 0px !important;
+    line-height: 24px;
 }
 
 #app {

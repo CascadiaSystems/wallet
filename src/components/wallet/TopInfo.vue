@@ -29,7 +29,7 @@ export default {
     flex-shrink: 0;
     //display: flex;
     background-color: var(--bg-wallet-light);
-    padding: 12px 20px;
+    padding: 16px;
     overflow: hidden;
     border-radius: 0px;
     border: 1px solid var(--bg-wallet-lighter);

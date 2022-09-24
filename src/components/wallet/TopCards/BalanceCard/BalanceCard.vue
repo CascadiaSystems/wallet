@@ -26,23 +26,17 @@
             </div>
             <div class="balance_row">
                 <p class="balance" data-cy="wallet_balance" v-if="!balanceTextRight">
-                    {{ balanceTextLeft }} AVAX
+                    {{ balanceTextLeft }} SOPHON
                 </p>
                 <p class="balance" data-cy="wallet_balance" v-else>
                     {{ balanceTextLeft }}
                     <span>.{{ balanceTextRight }}</span>
-                    AVAX
+                    SOPHON
                 </p>
                 <div style="display: flex; flex-direction: row">
-                    <p class="balance_usd">
-                        <b>$ {{ totalBalanceUSDText }}</b>
-                        USD
-                    </p>
-                    <p class="balance_usd" style="background-color: transparent">
-                        <b>1 AVAX</b>
-                        =
-                        <b>${{ avaxPriceText }}</b>
-                        USD
+                    <p class="balance_usd">${{ totalBalanceUSDText }} USD</p>
+                    <p class="balance_usd" style="background-color: transparent; padding: 0px">
+                        1 SOPHON = ${{ avaxPriceText }} USD
                     </p>
                 </div>
             </div>
@@ -51,47 +45,47 @@
                 <div class="alt_non_breakdown" v-if="!isBreakdown">
                     <div>
                         <label>{{ $t('top.balance.available') }}</label>
-                        <p>{{ unlockedText }} AVAX</p>
+                        <p>{{ unlockedText }} SOPHON</p>
                     </div>
                     <div v-if="hasLocked">
                         <label>{{ $t('top.locked') }}</label>
-                        <p>{{ balanceTextLocked }} AVAX</p>
+                        <p>{{ balanceTextLocked }} SOPHON</p>
                     </div>
                     <div v-if="hasMultisig">
                         <label>Multisig</label>
-                        <p>{{ balanceTextMultisig }} AVAX</p>
+                        <p>{{ balanceTextMultisig }} SOPHON</p>
                     </div>
                     <div>
                         <label>{{ $t('top.balance.stake') }}</label>
-                        <p>{{ stakingText }} AVAX</p>
+                        <p>{{ stakingText }} SOPHON</p>
                     </div>
                 </div>
                 <div class="alt_breakdown" v-else>
                     <div>
                         <label>{{ $t('top.balance.available') }} (X)</label>
-                        <p>{{ avmUnlocked | cleanAvaxBN }} AVAX</p>
+                        <p>{{ avmUnlocked | cleanAvaxBN }} SOPHON</p>
                         <label>{{ $t('top.balance.available') }} (P)</label>
-                        <p>{{ platformUnlocked | cleanAvaxBN }} AVAX</p>
+                        <p>{{ platformUnlocked | cleanAvaxBN }} SOPHON</p>
                         <label>{{ $t('top.balance.available') }} (C)</label>
-                        <p>{{ evmUnlocked | cleanAvaxBN }} AVAX</p>
+                        <p>{{ evmUnlocked | cleanAvaxBN }} SOPHON</p>
                     </div>
                     <div v-if="hasLocked">
                         <label>{{ $t('top.balance.locked') }} (X)</label>
-                        <p>{{ avmLocked | cleanAvaxBN }} AVAX</p>
+                        <p>{{ avmLocked | cleanAvaxBN }} SOPHON</p>
                         <label>{{ $t('top.balance.locked') }} (P)</label>
-                        <p>{{ platformLocked | cleanAvaxBN }} AVAX</p>
+                        <p>{{ platformLocked | cleanAvaxBN }} SOPHON</p>
                         <label>{{ $t('top.balance.locked_stake') }} (P)</label>
-                        <p>{{ platformLockedStakeable | cleanAvaxBN }} AVAX</p>
+                        <p>{{ platformLockedStakeable | cleanAvaxBN }} SOPHON</p>
                     </div>
                     <div v-if="hasMultisig">
                         <label>Multisig (X)</label>
-                        <p>{{ avmMultisig | cleanAvaxBN }} AVAX</p>
+                        <p>{{ avmMultisig | cleanAvaxBN }} SOPHON</p>
                         <label>Multisig (P)</label>
-                        <p>{{ platformMultisig | cleanAvaxBN }} AVAX</p>
+                        <p>{{ platformMultisig | cleanAvaxBN }} SOPHON</p>
                     </div>
                     <div>
                         <label>{{ $t('top.balance.stake') }}</label>
-                        <p>{{ stakingText }} AVAX</p>
+                        <p>{{ stakingText }} SOPHON</p>
                     </div>
                 </div>
             </div>
@@ -374,8 +368,8 @@ export default class BalanceCard extends Vue {
 @use '../../../../main';
 .balance_card {
     display: grid;
-    grid-template-columns: 1fr 230px;
-    column-gap: 20px;
+    grid-template-columns: 1fr 200px;
+    column-gap: 16px;
 }
 
 .nft_card {
@@ -414,7 +408,9 @@ h4 {
     align-self: center;
 }
 .balance {
-    font-size: 2.4em;
+    font-size: 2.25rem;
+    line-height: 40px;
+    padding: 8px 0px;
     white-space: normal;
     /*font-weight: bold;*/
     font-family: Rubik !important;
@@ -427,12 +423,13 @@ h4 {
 
 .balance_usd {
     width: max-content;
-    background: var(--bg-light);
+    background: var(--bg-wallet);
     color: var(--primary-color-light);
-    font-size: 13px;
-    padding: 1px 6px;
-    border-radius: 3px;
-    margin-right: 6px !important;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 0px 8px;
+    border-radius: 0px;
+    margin-right: 16px !important;
 }
 
 .refresh {
@@ -494,7 +491,7 @@ h4 {
     > div {
         position: relative;
         padding: 0 24px;
-        border-right: 2px solid var(--bg-light);
+        border-right: 1px solid var(--bg-wallet-lighter);
         &:first-of-type {
             padding-left: 0;
         }
@@ -504,23 +501,29 @@ h4 {
     }
 
     label {
-        font-size: 13px;
+        display: inline-block;
+        font-size: 14px;
+        line-height: 24px;
         color: var(--primary-color-light);
+        margin-top: 8px !important;
+        &:first-child {
+            margin-top: 0px !important;
+        }
     }
 }
 
 .nft_card {
-    padding-left: 20px;
+    padding-left: 16px;
 }
 
 .breakdown_toggle {
     color: var(--primary-color-light);
-    font-size: 13px;
+    font-size: 14px;
     outline: none !important;
     margin-left: 12px;
 
     &:hover {
-        color: var(--secondary-color);
+        color: var(--primary-color);
     }
 }
 
@@ -531,7 +534,9 @@ h4 {
     }
 
     .balance {
-        font-size: 1.8rem !important;
+        font-size: 2.25rem !important;
+        line-height: 40px;
+        padding: 4px 0px;
     }
 
     .balance_usd {
@@ -565,7 +570,9 @@ h4 {
     }
 
     .balance {
-        font-size: 2em !important;
+        font-size: 2rem !important;
+        line-height: 36px;
+        padding: 4px 0px;
     }
 
     .where_info {
