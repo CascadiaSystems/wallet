@@ -379,7 +379,7 @@ export default class BalanceCard extends Vue {
 }
 
 .nft_card {
-    border-left: 2px solid var(--bg-light);
+    border-left: 1px solid var(--bg-wallet-lighter);
 }
 .fungible_card {
     height: 100%;

@@ -31,7 +31,8 @@ export default {
     background-color: var(--bg-wallet-light);
     padding: 12px 20px;
     overflow: hidden;
-    border-radius: 5px;
+    border-radius: 0px;
+    border: 1px solid var(--bg-wallet-lighter);
     animation-name: fade;
     animation-duration: 0.6s;
     animation-timing-function: ease-out;
