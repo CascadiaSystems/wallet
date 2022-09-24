@@ -2,7 +2,7 @@
     <div id="nav">
         <ConfirmLogout ref="logout"></ConfirmLogout>
         <v-spacer></v-spacer>
-
+				<div class="logo_title">SOPHON WALLET</div>
         <div class="buts_right">
             <DayNightToggle class="action_but"></DayNightToggle>
             <template v-if="isAuth">
@@ -138,7 +138,17 @@ button {
     }
 }
 
+.logo_title {
+	font-size: 36px;
+	color: var(--primary-color);
+	font-weight: 700;
+	text-align: center;
+	width: 100%;
+	padding-top: 42px;
+}
 .buts_right {
+		position: absolute;
+		right: 20px;
     display: flex;
     align-items: center;
 
