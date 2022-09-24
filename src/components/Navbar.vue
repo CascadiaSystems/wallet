@@ -1,11 +1,6 @@
 <template>
     <div id="nav">
         <ConfirmLogout ref="logout"></ConfirmLogout>
-        <router-link to="/" class="logo">
-            <img v-if="$root.theme === 'day'" src="@/assets/wallet_logo.png" />
-            <img v-else src="@/assets/wallet_logo_dark.png" />
-            <!--            <span class="slogan">by Avalanche</span>-->
-        </router-link>
         <v-spacer></v-spacer>
 
         <div class="buts_right">
@@ -13,16 +8,6 @@
             <template v-if="isAuth">
                 <button @click="logout">{{ $t('logout.button') }}</button>
             </template>
-            <template v-else>
-                <router-link to="/access" class="action_but" data-cy="access">
-                    {{ $t('nav.access') }}
-                </router-link>
-                <router-link to="/create" class="action_but" data-cy="create">
-                    {{ $t('nav.create') }}
-                </router-link>
-            </template>
-            <network-menu></network-menu>
-            <LanguageSelect class="lang_web"></LanguageSelect>
         </div>
 
         <div class="mobile_right">
