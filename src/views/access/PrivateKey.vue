@@ -90,23 +90,44 @@ export default class PrivateKey extends Vue {
     font-weight: 400;
     letter-spacing: 0.5px;
     text-transform: uppercase !important;
-    background-color: #e4e6eb !important;
-    color: #3a3b3c;
+    background-color: var(--primary-color-light);
+    color: var(--bg);
+
     &:hover {
-        opacity: 1;
+        background-color: var(--primary-color);
     }
 
     &:disabled {
-        opacity: 0.8 !important;
+        background-color: var(--primary-color-light);
     }
 }
-.access_card {
-    padding: main.$container-padding;
+.cancel_button {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin-bottom: 22px;
+    border-radius: 0px !important;
+    padding: 12px 24px;
+    min-width: 140px;
+    border-radius: 0px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase !important;
+    border: 1px solid var(--primary-color-light);
+    color: var(--primary-color-light);
+    background-color: var(--bg);
+    
+    a {
+        text-decoration: none !important;
+    }
+
+    &:hover {
+        border: 1px solid var(--primary-color);
+        color: var(--primary-color);
+    }
+
+    &:disabled {
+        border: 1px solid var(--primary-color-light);
+        color: var(--primary-color-light);
+    }
 }
 .content {
     width: 400px;
@@ -130,29 +151,6 @@ a {
     color: main.$primary-color-light !important;
     text-decoration: none !important;
     margin: 10px 0 20px;
-}
-.cancel_button {
-    width: 100%;
-    margin-bottom: 22px;
-    border-radius: 0px !important;
-    padding: 12px 24px;
-    min-width: 140px;
-    border-radius: 0px;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-    text-transform: uppercase !important;
-    border: 1px solid #e4e6eb !important;
-    color: #e4e6eb;
-    a {
-        text-decoration: none !important;
-    }
-    &:hover {
-        opacity: 1;
-    }
-
-    &:disabled {
-        opacity: 0.8 !important;
-    }
 }
 .remember {
     margin: 12px 0;
