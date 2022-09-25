@@ -219,14 +219,14 @@ input[type='password'] {
     font-weight: 400;
     letter-spacing: 0.5px;
     text-transform: uppercase !important;
-    background-color: #e4e6eb !important;
-    color: #3a3b3c;
+    background-color: var(--primary-color-light);
+    color: var(--bg);
     &:hover {
-        opacity: 1;
+        background-color: var(--primary-color);
     }
 
     &:disabled {
-        opacity: 0.8 !important;
+        background-color: var(--primary-color-light) !important;
     }
 }
 .cancel_button {
@@ -239,17 +239,20 @@ input[type='password'] {
     font-weight: 400;
     letter-spacing: 0.5px;
     text-transform: uppercase !important;
-    border: 1px solid #e4e6eb !important;
-    color: #e4e6eb;
+    border: 1px solid var(--primary-color-light);
+    color: var(--primary-color-light);
+    background-color: var(--bg);
     a {
         text-decoration: none !important;
     }
     &:hover {
-        opacity: 1;
+        border: 1px solid var(--primary-color);
+        color: var(--primary-color);
     }
 
     &:disabled {
-        opacity: 0.8 !important;
+        border: 1px solid var(--primary-color-light) !important;
+        color: var(--primary-color-light) !important;
     }
 }
 @include main.mobile_device {
