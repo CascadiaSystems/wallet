@@ -79,12 +79,13 @@ export default class PrivateKey extends Vue {
     border: 1px solid #3A3B3C;
     border-radius: 0px;
     margin-bottom: 22px;
+    padding: 4px 0;
 }
 .access_button {
     width: 100%;
     margin-bottom: 12px;
     border-radius: 0px !important;
-    padding: 5px 24px;
+    padding: 12px 24px;
     min-width: 140px;
     border-radius: 6px;
     font-size: 16px;
@@ -110,7 +111,7 @@ export default class PrivateKey extends Vue {
     align-items: center;
 }
 .content {
-    width: 340px;
+    width: 400px;
     max-width: 100%;
     margin: 0px auto;
 }
@@ -136,7 +137,7 @@ a {
     width: 100%;
     margin-bottom: 22px;
     border-radius: 0px !important;
-    padding: 5px 24px;
+    padding: 12px 24px;
     min-width: 140px;
     border-radius: 0px;
     font-weight: 400;
