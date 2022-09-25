@@ -1,11 +1,11 @@
 <template>
     <div class="input_cont">
         <span v-for="i in 24" :key="i">
-            {{ i }}.
             <input
                 type="password"
                 autocomplete="off"
                 autocapitalize="off"
+                :placeholder="i"
                 @focus="onFocus"
                 @blur="onBlur"
                 @input="onInput($event, i - 1)"
@@ -75,14 +75,15 @@ export default class MnemonicPasswordInput extends Vue {
     span {
         text-align: left;
         white-space: nowrap;
-        margin: 0.7em;
+        margin: 0.3em;
         display: grid;
-        grid-template-columns: 2em 1fr;
     }
 
     input {
-        border-bottom: 1px solid var(--primary-color-light);
-        width: 8ch;
+        border: 1px solid #3A3B3C;
+        width: 150px;
+        height: 48px;
+        text-align: center;
         border-radius: 2px;
         color: var(--primary-color);
     }
