@@ -3,14 +3,14 @@
         <div class="menus">
             <AccountsFound class="accounts_menu"></AccountsFound>
             <div class="options">
-                <router-link to="/access/privatekey" class="menu_option button_primary">
+                <router-link to="/access/privatekey" class="menu_option">
                     {{ $t('access.but_private_key') }}
                     <ImageDayNight
                         day="/img/access_icons/day/access.svg"
                         night="/img/access_icons/night/access.svg"
                     ></ImageDayNight>
                 </router-link>
-                <router-link to="/access/mnemonic" class="menu_option button_primary">
+                <router-link to="/access/mnemonic" class="menu_option">
                     {{ $t('access.but_mnemonic') }}
                     <ImageDayNight
                         day="/img/access_icons/day/create.svg"
