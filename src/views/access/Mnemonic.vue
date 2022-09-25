@@ -1,7 +1,7 @@
 <template>
     <div class="mnemonic_auth">
         <div class="left">
-            <header class="title">
+            <header class="mnemomic_title">
                 {{ $t('access.mnemonic.title') }}
             </header>
             <MnemonicPasswordInput @change="onPhraseIn"></MnemonicPasswordInput>
@@ -131,12 +131,13 @@ export default class Mnemonic extends Vue {
         //width: 100%;
     }
 }
-.title {
+.mnemomic_title {
     text-align: center;
     text-transform: capitalize;
     width: 100%;
     font-size: 24px;
     font-weight: 400;
+    margin-bottom: 24px;
 }
 h1 {
     text-align: center;
