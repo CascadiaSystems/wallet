@@ -34,19 +34,27 @@ export default class ChainSelect extends Vue {
     background-color: var(--bg-wallet);
 }
 button {
-    padding: 8px 5px;
-    opacity: 0.8;
+    padding: 12px 5px;
     outline: none !important;
-    font-weight: bold;
-    background-color: rgba(var(--bg-1), 0.5);
+    background-color: rgba(var(--bg-wallet), 0.5);
+    border-top: 1px solid var(--bg-wallet-lighter);
     &:hover {
         opacity: 1;
         color: var(--secondary-color);
     }
     &[active] {
         opacity: 1;
-        background-color: var(--bg);
+        background-color: var(--bg-light);
         color: var(--primary-color);
+        border-top-color: var(--bg-wallet-light);
+        border-right: 1px solid var(--bg-wallet-lighter);
+        border-left: 1px solid var(--bg-wallet-lighter);
+    }
+    &:first-child[active] {
+        border-left: none;
+    }
+    &:last-child[active] {
+        border-right: none;
     }
 }
 </style>
