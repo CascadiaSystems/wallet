@@ -1,7 +1,7 @@
 
 .menu_option {
   background-color: var(--bg-light);
-  color: var(--primary-color);
+  color: var(--primary-color-light);
   border: 1px solid #3A3B3C;
   padding: 12px;
   margin: 2px 0;
@@ -11,6 +11,10 @@
   align-items: center;
   text-decoration: none !important;
 
+  img {
+    opacity: .7;
+  }
+
   p {
     flex-grow: 1;
     text-align: left;
@@ -19,5 +23,9 @@
 
   &:hover {
     background-color: rgba(var(--bg-light-1));
+    color: var(--primary-color) !important;
+    img {
+      opacity: 1;
+    }
   }
 }
