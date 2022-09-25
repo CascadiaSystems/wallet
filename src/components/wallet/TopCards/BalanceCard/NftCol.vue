@@ -1,6 +1,6 @@
 <template>
     <div class="nft_col">
-        <h4>{{ $t('top.balance.collectibles') }}</h4>
+        <p class="nft_col_header">{{ $t('top.balance.collectibles') }}</p>
         <p v-if="isEmpty">{{ $t('top.nftempty') }}</p>
         <div v-else class="rows">
             <p>{{ statusText }}</p>
@@ -136,8 +136,13 @@ export default class NftCol extends Vue {
 
 .nft_col {
     p {
-        font-size: 12px;
+        font-size: 14px;
         color: var(--primary-color-light);
+    }
+    &_header {
+        color: var(--primary-color) !important;
+        font-size: 16px !important;
+        padding-bottom: 8px;
     }
 }
 
