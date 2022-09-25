@@ -1,23 +1,25 @@
 <template>
     <div class="mnemonic_auth">
         <div class="left">
-            <header>
-                <h1>{{ $t('access.mnemonic.title') }}</h1>
+            <header class="mnemomic_title">
+                {{ $t('access.mnemonic.title') }}
             </header>
             <MnemonicPasswordInput @change="onPhraseIn"></MnemonicPasswordInput>
             <div class="button_container">
                 <p class="err" v-if="err">{{ err }}</p>
-                <v-btn
-                    class="ava_button but_primary button_primary access"
+                <button
+                    class="access_button"
                     @click="access"
                     depressed
                     :loading="isLoading"
                     :disabled="!canSubmit"
                 >
                     {{ $t('access.mnemonic.submit') }}
-                </v-btn>
-                <router-link to="/access" class="link">
-                    {{ $t('access.mnemonic.cancel') }}
+                </button>
+                <router-link to="/access">
+                    <button class="cancel_button">
+                        {{ $t('access.mnemonic.cancel') }}
+                    </button>
                 </router-link>
             </div>
         </div>
@@ -116,7 +118,6 @@ export default class Mnemonic extends Vue {
 .mnemonic_auth {
     margin: 0px auto;
     width: max-content;
-    background-color: var(--bg-light);
     padding: main.$container-padding;
 
     .left,
@@ -130,9 +131,16 @@ export default class Mnemonic extends Vue {
         //width: 100%;
     }
 }
-
+.mnemomic_title {
+    text-align: center;
+    text-transform: capitalize;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 24px;
+}
 h1 {
-    text-align: left;
+    text-align: center;
     font-size: main.$m-size;
 }
 
@@ -186,18 +194,64 @@ input[type='password'] {
     border-radius: 4px;
 }
 
-.but_primary {
-    margin-top: 20px;
-    margin-bottom: 15px;
-}
-
 .button_container {
+    width: 100%;
+    padding-top: 24px;
+    padding-left: 30px;
+    padding-right: 30px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    a {
+        width: 100%;
+    }
 }
 
+.access_button {
+    width: 100%;
+    margin-bottom: 12px;
+    border-radius: 0px !important;
+    padding: 12px 24px;
+    min-width: 140px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase !important;
+    background-color: #e4e6eb !important;
+    color: #3a3b3c;
+    &:hover {
+        opacity: 1;
+    }
+
+    &:disabled {
+        opacity: 0.8 !important;
+    }
+}
+.cancel_button {
+    width: 100%;
+    margin-bottom: 22px;
+    border-radius: 0px !important;
+    padding: 12px 24px;
+    min-width: 140px;
+    border-radius: 0px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase !important;
+    border: 1px solid #e4e6eb !important;
+    color: #e4e6eb;
+    a {
+        text-decoration: none !important;
+    }
+    &:hover {
+        opacity: 1;
+    }
+
+    &:disabled {
+        opacity: 0.8 !important;
+    }
+}
 @include main.mobile_device {
     .mnemonic_auth {
         display: flex;

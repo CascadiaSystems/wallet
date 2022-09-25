@@ -5,7 +5,7 @@
             <form @submit.prevent="access">
                 <v-text-field
                     class="pass"
-                    label="Private Key"
+                    label="Input your private Key"
                     dense
                     solo
                     flat
@@ -14,27 +14,24 @@
                     hide-details
                 ></v-text-field>
                 <p class="err">{{ error }}</p>
-                <v-btn
-                    class="ava_button button_primary"
+                <button
+                    class="access_button"
                     @click="access"
                     :loading="isLoading"
                     :disabled="!canSubmit"
                     depressed
                 >
                     Access Wallet
-                </v-btn>
+                </button>
             </form>
-            <router-link to="/access" class="link">Cancel</router-link>
+            <router-link to="/access">
+                <button class="cancel_button">Cancel</button>
+            </router-link>
         </div>
     </div>
 </template>
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
-import { ImportKeyfileInput } from '@/store/types'
-import { SingletonWallet } from '@/js/wallets/SingletonWallet'
-import { privateToAddress } from 'ethereumjs-util'
-import { bintools } from '@/AVA'
-import { Buffer } from 'avalanche'
 import { strip0x } from '@avalabs/avalanche-wallet-sdk'
 
 @Component
@@ -76,34 +73,51 @@ export default class PrivateKey extends Vue {
 <style scoped lang="scss">
 @use '../../main';
 .pass {
-    background-color: var(--bg) !important;
-}
-.ava_button {
-    width: 100%;
+    color: #3a3b3c;
+    border: 1px solid #3a3b3c;
+    border-radius: 0px;
     margin-bottom: 22px;
+    padding: 4px 0;
+}
+.access_button {
+    width: 100%;
+    margin-bottom: 12px;
+    border-radius: 0px !important;
+    padding: 12px 24px;
+    min-width: 140px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase !important;
+    background-color: #e4e6eb !important;
+    color: #3a3b3c;
+    &:hover {
+        opacity: 1;
+    }
+
+    &:disabled {
+        opacity: 0.8 !important;
+    }
 }
 .access_card {
-    /*max-width: 80vw;*/
-    background-color: var(--bg-light);
     padding: main.$container-padding;
     width: 100%;
-    /*max-width: 240px;*/
-    /*max-width: 1000px;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 6px;
 }
 .content {
-    width: 340px;
+    width: 400px;
     max-width: 100%;
     margin: 0px auto;
 }
 h1 {
     font-size: main.$m-size;
+    color: var(--primary-color);
     font-weight: 400;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
 }
 .file_in {
     margin: 30px auto 10px;
@@ -114,11 +128,31 @@ h1 {
 }
 a {
     color: main.$primary-color-light !important;
-    text-decoration: underline !important;
+    text-decoration: none !important;
     margin: 10px 0 20px;
 }
-.link {
-    color: var(--secondary-color);
+.cancel_button {
+    width: 100%;
+    margin-bottom: 22px;
+    border-radius: 0px !important;
+    padding: 12px 24px;
+    min-width: 140px;
+    border-radius: 0px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase !important;
+    border: 1px solid #e4e6eb !important;
+    color: #e4e6eb;
+    a {
+        text-decoration: none !important;
+    }
+    &:hover {
+        opacity: 1;
+    }
+
+    &:disabled {
+        opacity: 0.8 !important;
+    }
 }
 .remember {
     margin: 12px 0;
