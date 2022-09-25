@@ -219,8 +219,8 @@ input[type='password'] {
     font-weight: 400;
     letter-spacing: 0.5px;
     text-transform: uppercase !important;
-    background-color: #E4E6EB !important;
-    color: #3A3B3C;
+    background-color: #e4e6eb !important;
+    color: #3a3b3c;
     &:hover {
         opacity: 1;
     }
@@ -239,10 +239,10 @@ input[type='password'] {
     font-weight: 400;
     letter-spacing: 0.5px;
     text-transform: uppercase !important;
-    border: 1px solid #E4E6EB !important;
-    color: #E4E6EB;
+    border: 1px solid #e4e6eb !important;
+    color: #e4e6eb;
     a {
-        text-decoration:none !important;
+        text-decoration: none !important;
     }
     &:hover {
         opacity: 1;

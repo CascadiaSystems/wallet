@@ -25,9 +25,7 @@
                 </button>
             </form>
             <router-link to="/access">
-                <button class="cancel_button">
-                    Cancel
-                </button>
+                <button class="cancel_button">Cancel</button>
             </router-link>
         </div>
     </div>
@@ -75,8 +73,8 @@ export default class PrivateKey extends Vue {
 <style scoped lang="scss">
 @use '../../main';
 .pass {
-    color: #3A3B3C;
-    border: 1px solid #3A3B3C;
+    color: #3a3b3c;
+    border: 1px solid #3a3b3c;
     border-radius: 0px;
     margin-bottom: 22px;
     padding: 4px 0;
@@ -92,8 +90,8 @@ export default class PrivateKey extends Vue {
     font-weight: 400;
     letter-spacing: 0.5px;
     text-transform: uppercase !important;
-    background-color: #E4E6EB !important;
-    color: #3A3B3C;
+    background-color: #e4e6eb !important;
+    color: #3a3b3c;
     &:hover {
         opacity: 1;
     }
@@ -117,7 +115,7 @@ export default class PrivateKey extends Vue {
 }
 h1 {
     font-size: main.$m-size;
-	color: var(--primary-color);
+    color: var(--primary-color);
     font-weight: 400;
     margin-bottom: 24px;
 }
@@ -143,10 +141,10 @@ a {
     font-weight: 400;
     letter-spacing: 0.5px;
     text-transform: uppercase !important;
-    border: 1px solid #E4E6EB !important;
-    color: #E4E6EB;
+    border: 1px solid #e4e6eb !important;
+    color: #e4e6eb;
     a {
-        text-decoration:none !important;
+        text-decoration: none !important;
     }
     &:hover {
         opacity: 1;
