@@ -11,16 +11,6 @@
             <template v-if="isAuth">
                 <button @click="logout">{{ $t('logout.button') }}</button>
             </template>
-            <template v-else>
-                <router-link to="/access" class="action_but" data-cy="access">
-                    {{ $t('nav.access') }}
-                </router-link>
-                <router-link to="/create" class="action_but" data-cy="create">
-                    {{ $t('nav.create') }}
-                </router-link>
-            </template>
-            <network-menu></network-menu>
-            <LanguageSelect class="lang_web"></LanguageSelect>
         </div>
 
         <div class="mobile_right">
@@ -141,7 +131,17 @@ button {
     }
 }
 
+.logo_title {
+    font-size: 36px;
+    color: var(--primary-color);
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+    padding-top: 42px;
+}
 .buts_right {
+    position: absolute;
+    right: 20px;
     display: flex;
     align-items: center;
 

@@ -53,7 +53,7 @@
         "keystore_error": "This keystore version is not supported.",
         "password_error": "Invalid Password.",
         "mnemonic": {
-            "title": "Enter your MNEMONIC phrase\n",
+            "title": "Mnemonic Phrase",
             "subtitle": "Hit ‘SPACE’ after every successful word entry.",
             "submit": "Access Wallet",
             "cancel": "Cancel",
