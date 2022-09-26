@@ -3,18 +3,18 @@
         <div class="menus">
             <AccountsFound class="accounts_menu"></AccountsFound>
             <div class="options">
-                <router-link to="/access/privatekey" class="menu_option button_primary">
+                <router-link to="/access/privatekey" class="menu_option">
                     {{ $t('access.but_private_key') }}
                     <ImageDayNight
-                        day="/img/access_icons/day/access.svg"
-                        night="/img/access_icons/night/access.svg"
+                        day="/img/access_icons/day/privatekey.svg"
+                        night="/img/access_icons/night/privatekey.svg"
                     ></ImageDayNight>
                 </router-link>
-                <router-link to="/access/mnemonic" class="menu_option button_primary">
+                <router-link to="/access/mnemonic" class="menu_option">
                     {{ $t('access.but_mnemonic') }}
                     <ImageDayNight
-                        day="/img/access_icons/day/create.svg"
-                        night="/img/access_icons/night/create.svg"
+                        day="/img/access_icons/day/mnemonic.svg"
+                        night="/img/access_icons/night/mnemonic.svg"
                     ></ImageDayNight>
                 </router-link>
             </div>

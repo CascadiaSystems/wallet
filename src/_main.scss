@@ -457,17 +457,18 @@ html[data-theme='day'] {
 
     --bg-wallet: #f5f6fa;
     --bg-wallet-light: #fff;
+    --bg-wallet-disable: #827c85b4;
 
     --warning: #ef8f4a;
 }
 
 html[data-theme='night'] {
-    --bg: #242729;
+    --bg: #18191A;
     --bg-1: 36, 39, 41;
-    --bg-light: #2e3234;
-    --bg-light-1: 46, 50, 52;
-    --primary-color: #e5e5e5;
-    --primary-color-light: #6e7479;
+    --bg-light: #242526;
+    --bg-light-1: 58 59 60;
+    --primary-color: #e4e6eB;
+    --primary-color-light: #b0b3b8;
     --secondary-color: #e84970;
     --selection-color: #6a91d8;
     --link-secondary: #6e7479;
@@ -478,6 +479,7 @@ html[data-theme='night'] {
 
     --bg-wallet: #181b1d;
     --bg-wallet-light: #242729;
+    --bg-wallet-disable: #3a3b3c;
 
     --warning: #d49534;
 }
