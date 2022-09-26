@@ -121,12 +121,14 @@ button {
 
 #nav {
     .logo {
+        width: 100%;
         display: flex;
         align-items: center;
+        justify-content: center;
         color: var(--primary-color-light) !important;
 
         &:hover {
-            opacity: 0.7;
+            opacity: 0.9;
         }
     }
 }

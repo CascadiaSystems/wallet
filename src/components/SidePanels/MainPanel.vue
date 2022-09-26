@@ -41,23 +41,22 @@ export default {
 .main_panel {
     display: grid;
     grid-template-rows: max-content 1fr;
-    row-gap: 6px;
+    border-left: 1px solid var(--bg-wallet-lighter);
 }
 .panel_nav {
     background-color: var(--bg-wallet-light);
-    /*display: flex;*/
-    /*align-items: center;*/
-    /*flex-direction: row;*/
-    display: grid;
-    grid-template-columns: max-content max-content 1fr;
-    /*justify-content: space-between;*/
-    padding: 24px 16px;
-    font-size: 14px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px;
+    font-size: 16px;
+    border-bottom: 1px solid var(--bg-wallet-lighter);
 
     > * {
         outline: none !important;
-        padding: 4px 8px;
-        border-radius: 4px;
+        border-radius: 0px;
+        padding: 0;
     }
 }
 
@@ -76,7 +75,10 @@ export default {
 }
 
 .logout {
-    margin-left: auto;
+    color: var(--primary-color-light);
+    &:hover {
+        color: var(--primry-color);
+    }
 }
 
 @include main.medium-device {

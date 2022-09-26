@@ -2,7 +2,7 @@
     <div class="tx_history_panel">
         <div class="history_block" :disabled="!isActivityPage"></div>
         <div class="header">
-            <h2>Transactions</h2>
+            <h3>Transactions</h3>
             <Spinner v-if="isUpdating" class="spinner"></Spinner>
         </div>
         <div class="empty" v-if="!isExplorer">
@@ -107,9 +107,9 @@ export default class TransactionHistoryPanel extends Vue {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--bg-light);
-    padding: 8px 16px;
+    padding: 16px;
 
-    h2 {
+    h3 {
         font-weight: normal;
     }
 
@@ -128,14 +128,14 @@ export default class TransactionHistoryPanel extends Vue {
 }
 .list {
     overflow: scroll;
-    padding: 8px 16px;
+    padding: 0px 16px;
     padding-bottom: 20px;
 }
 
 .empty {
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
-    padding: 30px;
+    padding: 0px 16px;
 }
 
 .tx_row {
@@ -148,9 +148,8 @@ export default class TransactionHistoryPanel extends Vue {
 .warn {
     background-color: var(--bg-light);
     text-align: center;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 15px;
+    font-size: 14px;
+    padding: 16px;
 }
 
 .history_block {
