@@ -4,6 +4,9 @@
         <router-link to="/" class="logo">
             <h1>Sophon Wallet</h1>
         </router-link>
+        <router-link to="/" class="logo">
+            <h1>Sophon Wallet</h1>
+        </router-link>
         <v-spacer></v-spacer>
 
         <div class="buts_right">
@@ -121,24 +124,18 @@ button {
 
 #nav {
     .logo {
+        width: 100%;
         display: flex;
         align-items: center;
+        justify-content: center;
         color: var(--primary-color-light) !important;
 
         &:hover {
-            opacity: 0.7;
+            opacity: 0.9;
         }
     }
 }
 
-.logo_title {
-    font-size: 36px;
-    color: var(--primary-color);
-    font-weight: 700;
-    text-align: center;
-    width: 100%;
-    padding-top: 42px;
-}
 .buts_right {
     position: absolute;
     right: 20px;

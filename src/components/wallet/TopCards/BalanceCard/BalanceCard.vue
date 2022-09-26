@@ -6,19 +6,19 @@
                 <div class="refresh">
                     <Spinner v-if="isUpdateBalance" class="spinner"></Spinner>
                     <button v-else @click="updateBalance">
-                        <fa icon="sync"></fa>
+                        <img src="/img/icons/refresh.svg" />
                     </button>
                 </div>
                 <h4>{{ $t('top.title2') }}</h4>
                 <template v-if="!isBreakdown">
                     <button class="breakdown_toggle" @click="toggleBreakdown">
-                        <fa icon="eye"></fa>
+                        <img src="/img/icons/eye_show.svg" />
                         {{ $t('top.balance.show') }}
                     </button>
                 </template>
                 <template v-else>
                     <button class="breakdown_toggle" @click="toggleBreakdown">
-                        <fa icon="eye-slash"></fa>
+                        <img src="/img/icons/eye_hide.svg" />
                         {{ $t('top.balance.hide') }}
                     </button>
                 </template>
@@ -433,12 +433,18 @@ h4 {
 }
 
 .refresh {
-    width: 20px;
-    height: 20px;
-    color: var(--primary-color);
+    height: 100%;
 
     button {
         outline: none !important;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        color: var(--primary-color);
+        opacity: 0.9;
+        &:hover {
+            opacity: 1;
+        }
     }
     img {
         object-fit: contain;
@@ -521,9 +527,19 @@ h4 {
     font-size: 14px;
     outline: none !important;
     margin-left: 12px;
+    display: flex;
+    align-items: center;
+
+    img {
+        opacity: 0.9;
+        padding-right: 8px;
+    }
 
     &:hover {
         color: var(--primary-color);
+        img {
+            opacity: 1;
+        }
     }
 }
 
