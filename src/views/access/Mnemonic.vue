@@ -226,7 +226,7 @@ input[type='password'] {
     }
 
     &:disabled {
-        background-color: var(--primary-color-light) !important;
+        background-color: var(--bg-wallet-disable) !important;
     }
 }
 .cancel_button {
