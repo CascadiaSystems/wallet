@@ -131,14 +131,6 @@ button {
     }
 }
 
-.logo_title {
-    font-size: 36px;
-    color: var(--primary-color);
-    font-weight: 700;
-    text-align: center;
-    width: 100%;
-    padding-top: 42px;
-}
 .buts_right {
     position: absolute;
     right: 20px;

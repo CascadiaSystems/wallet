@@ -150,13 +150,4 @@ export default {
         margin-top: 4px;
     }
 }
-
-@include main.medium-device {
-    .brand {
-        height: 90px;
-    }
-    .links {
-        font-size: 12px;
-    }
-}
 </style>
