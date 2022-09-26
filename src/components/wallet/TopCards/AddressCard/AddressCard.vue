@@ -266,6 +266,7 @@ export default class AddressCard extends Vue {
 }
 .buts {
     width: 100%;
+    margin-top: 12px;
     display: flex;
     align-items: center;
     color: var(--primary-color-light);
@@ -276,8 +277,8 @@ export default class AddressCard extends Vue {
         margin-left: 14px;
         position: relative;
         outline: none;
-        width: 18px;
-        height: 18px;
+        width: 16px;
+        height: 16px;
         opacity: 0.6;
 
         background-size: contain;
@@ -327,13 +328,11 @@ export default class AddressCard extends Vue {
 }
 
 .addr_info {
-    margin: 19px !important;
-    margin-bottom: 0 !important;
+    font-size: 14px;
     background-color: var(--bg-light);
-    font-size: 13px;
-    font-weight: bold;
-    text-align: center;
-    padding: 12px 16px;
+    color: var(--primary-color-light);
+    padding: 16px;
+    padding-bottom: 0px;
 }
 
 $qr_width: 110px;
@@ -342,9 +341,7 @@ $qr_width: 110px;
     display: grid;
     grid-template-columns: $qr_width 1fr;
     column-gap: 14px;
-    padding-right: 18px;
-    margin-top: 4px;
-    margin-bottom: 4px;
+    padding: 16px;
     padding-left: 8px;
     flex-grow: 1;
 
@@ -373,15 +370,15 @@ $qr_width: 110px;
 }
 
 .subtitle {
-    font-size: 0.7rem;
+    font-size: 0.875rem;
     color: var(--primary-color-light);
+    margin-bottom: 4px;
 }
 
 .addr_text {
-    font-size: 15px;
+    font-size: 16px;
     word-break: break-all;
     color: var(--primary-color);
-    min-height: 55px;
 }
 
 @include main.medium-device {
@@ -405,6 +402,7 @@ $qr_width: 110px;
 
         > * {
             margin: 0;
+            margin-top: 16px;
         }
     }
 

@@ -1,8 +1,11 @@
 <template>
     <div id="nav">
         <ConfirmLogout ref="logout"></ConfirmLogout>
+        <router-link to="/" class="logo">
+            <h1>Sophon Wallet</h1>
+        </router-link>
         <v-spacer></v-spacer>
-        <div class="logo_title">SOPHON WALLET</div>
+
         <div class="buts_right">
             <DayNightToggle class="action_but"></DayNightToggle>
             <template v-if="isAuth">
@@ -27,22 +30,21 @@
         >
             <v-list dense nav>
                 <div style="display: flex; justify-content: space-between; padding: 4px 8px">
-                    <img v-if="$root.theme === 'day'" src="@/assets/wallet_logo.svg" />
-                    <img v-else src="@/assets/wallet_logo_dark.svg" />
+                    <h1>Sophon Wallet</h1>
                     <DayNightToggle class="action_but"></DayNightToggle>
                 </div>
                 <template v-if="isAuth">
-                    <router-link to="/wallet">{{ $t('wallet.sidebar.portfolio') }}</router-link>
-                    <router-link to="/wallet/transfer">{{ $t('wallet.sidebar.send') }}</router-link>
+                    <!-- <router-link to="/wallet">{{ $t('wallet.sidebar.portfolio') }}</router-link>
+                    <router-link to="/wallet/transfer">{{ $t('wallet.sidebar.send') }}</router-link> -->
                     <router-link to="/wallet/cross_chain">
                         {{ $t('wallet.sidebar.export') }}
                     </router-link>
                     <router-link to="/wallet/earn">{{ $t('wallet.sidebar.earn') }}</router-link>
-                    <router-link to="/wallet/activity">Activity</router-link>
+                    <!-- <router-link to="/wallet/activity">Activity</router-link>
                     <router-link to="/wallet/keys">{{ $t('wallet.sidebar.manage') }}</router-link>
                     <router-link to="/wallet/advanced" data-cy="wallet_advanced">
                         {{ $t('wallet.sidebar.advanced') }}
-                    </router-link>
+                    </router-link> -->
                     <button class="logout" @click="logout">
                         {{ $t('logout.button') }}
                     </button>
@@ -122,18 +124,9 @@ button {
         display: flex;
         align-items: center;
         color: var(--primary-color-light) !important;
-        font-size: 11px;
-        font-weight: 700;
 
         &:hover {
             opacity: 0.7;
-        }
-
-        img {
-            height: 30px;
-            max-height: none !important;
-            object-fit: contain;
-            margin-right: 5px;
         }
     }
 }

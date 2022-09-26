@@ -114,7 +114,7 @@ export default class PrivateKey extends Vue {
     border: 1px solid var(--primary-color-light);
     color: var(--primary-color-light);
     background-color: var(--bg);
-    
+
     a {
         text-decoration: none !important;
     }
