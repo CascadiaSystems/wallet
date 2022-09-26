@@ -4,6 +4,9 @@
         <router-link to="/" class="logo">
             <h1>Sophon Wallet</h1>
         </router-link>
+        <router-link to="/" class="logo">
+            <h1>Sophon Wallet</h1>
+        </router-link>
         <v-spacer></v-spacer>
 
         <div class="buts_right">
