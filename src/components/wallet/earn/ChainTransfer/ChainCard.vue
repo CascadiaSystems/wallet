@@ -3,7 +3,9 @@
         <div class="input_group">
             <h4 v-if="isSource">{{ $t('cross_chain.card.source') }}</h4>
             <h4 v-else>{{ $t('cross_chain.card.destination') }}</h4>
-            <p style="font-size: 36px; padding-top: 8px; font-weight: 400;" class="chain_alias">{{ chain }}</p>
+            <p style="font-size: 36px; padding-top: 8px; font-weight: 400" class="chain_alias">
+                {{ chain }}
+            </p>
         </div>
         <div>
             <div class="input_group">
@@ -122,7 +124,7 @@ label {
     display: flex;
     flex-direction: column;
     margin-bottom: 12px;
-    
+
     h4 {
         font-weight: 400;
     }

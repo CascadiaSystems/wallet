@@ -749,7 +749,8 @@ h2 {
         word-break: keep-all !important;
     }
 }
-.button_success, .button_transfer {
+.button_success,
+.button_transfer {
     width: 100%;
     margin-bottom: 12px;
     border-radius: 0px !important;
@@ -771,7 +772,8 @@ h2 {
         background-color: var(--bg-wallet-disable) !important;
     }
 }
-.button_confirm, .button_cancel {
+.button_confirm,
+.button_cancel {
     width: 100%;
     margin-bottom: 22px;
     border-radius: 0px !important;
