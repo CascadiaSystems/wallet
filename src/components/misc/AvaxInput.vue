@@ -12,7 +12,7 @@
                 @change="amount_in"
             ></BigNumInput>
         </div>
-        <p class="ticker">AVAX</p>
+        <p class="ticker">SOPHON</p>
         <div v-if="balance" class="balance">
             <div>
                 <p>
@@ -102,8 +102,8 @@ export default class AvaxInput extends Vue {
     .ticker,
     .amt_in,
     .max_but {
-        background-color: var(--bg-light);
-        //border-radius: 3px;
+        background-color: var(--bg-wallet);
+        color: var(--primary-color-light);
     }
 }
 
@@ -135,9 +135,8 @@ export default class AvaxInput extends Vue {
 }
 
 .col1 {
-    border-radius: 3px;
-    background-color: var(--bg-light);
-    border: 1px solid transparent;
+    background-color: var(--bg-wallet);
+    border: 1px solid var(--bg-wallet-lighter) !important;
     //display: flex;
     display: grid;
     grid-template-columns: max-content 1fr;
@@ -156,8 +155,8 @@ export default class AvaxInput extends Vue {
 }
 
 .ticker {
-    border-radius: 3px;
     padding: 8px 14px;
+    color: var(--primary-color-light);
 }
 
 p {

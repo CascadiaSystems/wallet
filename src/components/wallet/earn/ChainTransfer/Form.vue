@@ -42,7 +42,7 @@
         </div>
         <div class="confirmation_val" v-else>
             <label>{{ $t('earn.transfer.amount') }}</label>
-            <p>{{ formAmtText }} AVAX</p>
+            <p>{{ formAmtText }} SOPHON</p>
         </div>
     </div>
 </template>
@@ -175,12 +175,11 @@ label {
 
 select {
     width: 100%;
-    color: var(--primary-color);
-    background-color: var(--bg-light);
-    border: 1px solid transparent;
-    border-radius: 4px;
-    padding: 16px 12px;
-    font-size: 14px;
+    color: var(--primary-color-light);
+    background-color: var(--bg-wallet);
+    border: 1px solid var(--bg-wallet-lighter) !important;
+    padding: 11px 12px;
+    font-size: 16px;
     outline: none;
     transition-duration: 0.1s;
     cursor: pointer;
