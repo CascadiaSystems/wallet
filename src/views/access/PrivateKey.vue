@@ -98,7 +98,7 @@ export default class PrivateKey extends Vue {
     }
 
     &:disabled {
-        background-color: var(--primary-color-light);
+        background-color: var(--bg-wallet-disable) !important;
     }
 }
 .cancel_button {
