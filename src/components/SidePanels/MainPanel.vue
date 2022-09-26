@@ -5,7 +5,8 @@
             <DayNightToggle class="hover_but"></DayNightToggle>
             <network-menu class="net_menu"></network-menu>
             <button @click="logout" class="logout">
-                {{ $t('logout.button') }}
+                <img src="/img/logout.svg" />
+                <!-- {{ $t('logout.button') }} -->
             </button>
         </div>
         <transition name="fade" mode="out-in">
@@ -75,9 +76,12 @@ export default {
 }
 
 .logout {
-    color: var(--primary-color-light);
+    display: flex;
+    align-items: center;
+    opacity: 0.9;
+
     &:hover {
-        color: var(--primry-color);
+        opacity: 1;
     }
 }
 
