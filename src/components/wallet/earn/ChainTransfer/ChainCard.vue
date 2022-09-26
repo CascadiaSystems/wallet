@@ -3,7 +3,7 @@
         <div class="input_group">
             <h4 v-if="isSource">{{ $t('cross_chain.card.source') }}</h4>
             <h4 v-else>{{ $t('cross_chain.card.destination') }}</h4>
-            <p style="font-size: 3em" class="chain_alias">{{ chain }}</p>
+            <p style="font-size: 36px; padding-top: 8px; font-weight: 400;" class="chain_alias">{{ chain }}</p>
         </div>
         <div>
             <div class="input_group">
@@ -31,9 +31,9 @@ import NumberCounter from '@/components/misc/NumberCounter.vue'
 
 const chainTypes: ChainIdType[] = ['X', 'P', 'C']
 const chainNames = {
-    X: 'Exchange Chain',
+    X: 'Native Chain',
     C: 'Contract Chain',
-    P: 'Platform Chain',
+    P: 'EVM Chain',
 }
 
 @Component({
@@ -110,7 +110,9 @@ label {
 }
 
 .chain_card {
+    background-color: var(--bg) !important;
     //height: max-content;
+    border-radius: 0px !important;
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 14px;
@@ -120,6 +122,10 @@ label {
     display: flex;
     flex-direction: column;
     margin-bottom: 12px;
+    
+    h4 {
+        font-weight: 400;
+    }
 }
 
 p {
