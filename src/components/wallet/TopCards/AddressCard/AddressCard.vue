@@ -279,7 +279,7 @@ export default class AddressCard extends Vue {
         outline: none;
         width: 16px;
         height: 16px;
-        opacity: 0.6;
+        opacity: 0.9;
 
         background-size: contain;
         background-position: center;
