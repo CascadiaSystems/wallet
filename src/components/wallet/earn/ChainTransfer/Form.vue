@@ -168,7 +168,7 @@ export default class Form extends Vue {
 label {
     color: var(--primary-color);
     font-size: 15px;
-    font-weight: bold;
+    font-weight: 400;
     font-family: Roboto, sans-serif;
     margin-bottom: 4px !important;
 }
