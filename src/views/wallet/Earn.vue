@@ -21,8 +21,8 @@
                         <p v-if="!canValidate" class="no_balance">
                             {{ $t('earn.warning_1', [minStakeAmt.toLocaleString()]) }}
                         </p>
-                        <v-btn
-                            class="button_secondary"
+                        <button
+                            class="button"
                             data-cy="validate"
                             @click="addValidator"
                             depressed
@@ -30,7 +30,7 @@
                             :disabled="!canValidate"
                         >
                             {{ $t('earn.validate_card.submit') }}
-                        </v-btn>
+                        </button>
                     </div>
                     <div>
                         <h4 class="title">
@@ -42,8 +42,8 @@
                         <p v-if="!canDelegate" class="no_balance">
                             {{ $t('earn.warning_2', [minDelegationAmt.toLocaleString()]) }}
                         </p>
-                        <v-btn
-                            class="button_secondary"
+                        <button
+                            class="button"
                             data-cy="delegate"
                             @click="addDelegator"
                             depressed
@@ -51,24 +51,7 @@
                             :disabled="!canDelegate"
                         >
                             {{ $t('earn.delegate_card.submit') }}
-                        </v-btn>
-                    </div>
-                    <div>
-                        <h4 class="title">
-                            {{ $t('earn.transfer_card.title') }}
-                        </h4>
-                        <p style="flex-grow: 1">
-                            {{ $t('earn.transfer_card.desc') }}
-                        </p>
-                        <v-btn
-                            class="button_secondary"
-                            data-cy="swap"
-                            @click="transfer"
-                            depressed
-                            small
-                        >
-                            {{ $t('earn.transfer_card.submit') }}
-                        </v-btn>
+                        </button>
                     </div>
                     <div>
                         <h4 class="title">
@@ -77,18 +60,18 @@
                         <p style="flex-grow: 1">
                             {{ $t('earn.rewards_card.desc') }}
                         </p>
-                        <v-btn
-                            class="button_secondary"
+                        <button
+                            class="button"
                             data-cy="rewards"
                             @click="viewRewards"
                             depressed
                             small
                         >
                             {{ $t('earn.rewards_card.submit') }}
-                        </v-btn>
+                        </button>
                     </div>
                 </div>
-                <!--                <v-btn @click="viewRewards" depressed small>View Estimated Rewards</v-btn>-->
+                <!--                <button @click="viewRewards" depressed small>View Estimated Rewards</button>-->
             </div>
             <div v-else>
                 <component :is="pageNow" class="comp" @cancel="cancel"></component>
@@ -238,33 +221,40 @@ export default class Earn extends Vue {
 .options {
     margin: 30px 0;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 14px;
     //display: flex;
     //justify-content: space-evenly;
     //padding: 60px;
 
     > div {
-        width: 100%;
         justify-self: center;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
         //max-width: 260px;
-        padding: 30px;
-        border-radius: 4px;
+        padding: 24px;
+        border-radius: 0px;
+        border: 1px solid var(--bg-wallet-lighter);
         background-color: var(--bg-light);
+        cursor: pointer;
+
+        &:hover {
+            border: 1px solid var(--primary-color-light);
+            background-color: var(--bg);
+        }
     }
 
     h4 {
-        font-size: 32px !important;
-        font-weight: lighter;
-        color: var(--primary-color-light);
+        font-size: 20px !important;
+        font-weight: 400;
+        color: var(--primary-color);
     }
 
     p {
-        /*color: var(--primary-color-light);*/
+        color: var(--primary-color-light);
+        font-size: 14px !important;
         margin: 14px 0 !important;
     }
 
@@ -272,7 +262,7 @@ export default class Earn extends Vue {
         color: var(--secondary-color);
     }
 
-    .v-btn {
+    .button {
         margin-top: 14px;
     }
 }
@@ -290,6 +280,22 @@ span {
     justify-self: flex-end;
 }
 
+.button {
+    width: 100%;
+    border-radius: 0px !important;
+    padding: 4px 12px;
+    min-width: 140px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    background-color: var(--primary-color-light);
+    color: var(--bg);
+
+    &:hover {
+        background-color: var(--primary-color);
+    }
+}
 .comp {
     margin-top: 14px;
 }

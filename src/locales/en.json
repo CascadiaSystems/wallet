@@ -287,7 +287,7 @@
         "save_account": {
             "title": "Save Account",
             "desc": "Encode your wallet with a password and store securely on this browser.",
-            "submit":  "Save",
+            "submit": "Save",
             "placeholder_1": "Account Name",
             "placeholder_2": "Password",
             "placeholder_3": "Confirm Password"
@@ -328,7 +328,7 @@
         "remove_success_msg": "Private key and assets removed from the wallet.",
         "password_validation": "Password must be at least 9 characters long.",
         "password_validation2": "Password do not match.",
-        "account_name_required" : "Account Name Required."
+        "account_name_required": "Account Name Required."
     },
     "portfolio": {
         "assets": "Assets",
@@ -354,7 +354,7 @@
     },
     "earn": {
         "title": "Earn",
-        "desc": "You can earn more AVAX by staking your existing tokens.",
+        "desc": "You can earn more SOPHON by staking your existing tokens.",
         "subtitle1": "Validate",
         "subtitle2": "Delegate",
         "subtitle3": "Cross Chain Transfer",
@@ -363,12 +363,12 @@
         "warning_2": "You must have at least {0} AVAX on the P chain to become a delegator.",
         "validate_card": {
             "title": "Validate",
-            "desc": "You have an Avalanche node that you want to stake with.",
+            "desc": "You have a Sophon node that you want to stake with.",
             "submit": "Add Validator"
         },
         "delegate_card": {
             "title": "Delegate",
-            "desc": "You do not own an Avalanche node, but you want to stake using another node.",
+            "desc": "You do not own an Sophon node, but you want to stake using another node.",
             "submit": "Add Delegator"
         },
         "transfer_card": {
