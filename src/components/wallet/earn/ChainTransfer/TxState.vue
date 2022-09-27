@@ -5,12 +5,8 @@
             <h4 v-else>{{ $t('cross_chain.state.import') }}</h4>
             <div class="status_icon">
                 <Spinner v-if="state == 1" class="spinner"></Spinner>
-                <p v-else-if="state === 2">
-                    <fa icon="check-circle"></fa>
-                </p>
-                <p v-else-if="state === -1">
-                    <fa icon="times-circle"></fa>
-                </p>
+                <img src="/img/icons/check.svg" v-else-if="state === 2" />
+                <img src="/img/icons/times-check.svg" v-else-if="state === -1" />
             </div>
         </div>
         <div>
@@ -60,6 +56,9 @@ export default class TxStateCard extends Vue {
 .loading_header {
     display: flex;
     justify-content: space-between;
+    h4 {
+        font-weight: 400;
+    }
 }
 
 .tx_state_card {
@@ -101,11 +100,11 @@ export default class TxStateCard extends Vue {
     margin: 4px 0;
 
     label {
-        font-size: 12px;
+        font-size: 14px;
         color: var(--primary-color-light);
     }
     p {
-        //text-align: right;
+        font-size: 14px;
     }
 }
 </style>
