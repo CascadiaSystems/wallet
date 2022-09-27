@@ -84,7 +84,6 @@ export default class AvaxInput extends Vue {
     grid-gap: 0px 10px;
     color: var(--primary-color);
     width: 100%;
-    height: 40px;
 
     .amt_in {
         color: var(--primary-color);

@@ -41,7 +41,10 @@
             ></AvaxInput>
         </div>
         <div class="confirmation_val" v-else>
-            <p>$ {{ formAmtText }}</p>
+            <label>{{ $t('earn.transfer.amount') }}</label>
+            <div class="amount">{{ formAmtText }} SOPHON</div>
+
+            <div class="balance">$ {{ balance.toLocaleString(2) }}</div>
         </div>
     </div>
 </template>
@@ -161,8 +164,6 @@ export default class Form extends Vue {
         display: flex;
         margin: 13px 0;
     }
-
-    padding-bottom: 14px;
 }
 label {
     color: var(--primary-color);
@@ -192,23 +193,24 @@ select {
     //}
 }
 
-.balance {
-    font-size: 13px;
-    color: var(--primary-color-light);
-    span {
-        float: right;
-    }
-    margin-top: 4px !important;
-}
-
 .confirmation_val {
-    margin: 0px !important;
-    p {
-        padding: 0px;
+    margin-bottom: 0px !important;
+    .amount {
+        width: 100%;
+        color: var(--primary-color-light);
+        background-color: var(--bg-wallet);
+        border: 1px solid var(--bg-wallet-lighter) !important;
+        padding: 11px 12px;
+        font-size: 16px;
+        outline: none;
+        transition-duration: 0.1s;
         text-align: right;
+    }
+    .balance {
         font-size: 14px;
         color: var(--primary-color-light);
-        background-color: var(--bg-light);
+        text-align: right;
+        margin: 5px 0 !important;
     }
 }
 
