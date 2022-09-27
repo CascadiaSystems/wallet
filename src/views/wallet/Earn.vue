@@ -18,9 +18,9 @@
                         <p style="flex-grow: 1">
                             {{ $t('earn.validate_card.desc') }}
                         </p>
-                        <p v-if="!canValidate" class="no_balance">
+                        <!-- <p v-if="!canValidate" class="no_balance">
                             {{ $t('earn.warning_1', [minStakeAmt.toLocaleString()]) }}
-                        </p>
+                        </p> -->
                         <button
                             class="button"
                             data-cy="validate"
@@ -39,9 +39,9 @@
                         <p style="flex-grow: 1">
                             {{ $t('earn.delegate_card.desc') }}
                         </p>
-                        <p v-if="!canDelegate" class="no_balance">
+                        <!-- <p v-if="!canDelegate" class="no_balance">
                             {{ $t('earn.warning_2', [minDelegationAmt.toLocaleString()]) }}
-                        </p>
+                        </p> -->
                         <button
                             class="button"
                             data-cy="delegate"
@@ -281,7 +281,6 @@ span {
 }
 
 .button {
-    width: 100%;
     border-radius: 0px !important;
     padding: 4px 12px;
     min-width: 140px;
