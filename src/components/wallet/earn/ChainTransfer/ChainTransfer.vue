@@ -85,7 +85,7 @@
                 <div v-if="isSuccess" class="complete">
                     <h4 style="font-weight: 400">{{ $t('earn.transfer.success.title') }}</h4>
                     <div style="display: flex; color: var(--success); margin: 12px 0 !important">
-                        <fa icon="check-circle" style="margin-top: 3px; margin-right: 10px"></fa>
+                        <img src="/img/icons/check.svg" />
                         <div>{{ $t('earn.transfer.success.message') }}</div>
                     </div>
                     <button depressed class="button_success" small block @click="startAgain">
@@ -732,10 +732,14 @@ h2 {
 
 .complete {
     margin-top: 30px;
+    font-size: 14px;
     > div {
         background-color: var(--bg-light);
-        padding: 14px;
+        padding: 14px 0;
         margin: 4px 0;
+        img {
+            margin-right: 10px;
+        }
     }
 
     .desc {
