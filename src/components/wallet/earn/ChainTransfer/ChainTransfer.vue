@@ -86,10 +86,10 @@
                 </div>
                 <div v-if="isSuccess" class="complete">
                     <h4>{{ $t('earn.transfer.success.title') }}</h4>
-                    <p style="color: var(--success); margin: 12px 0 !important">
-                        <fa icon="check-circle"></fa>
-                        {{ $t('earn.transfer.success.message') }}
-                    </p>
+                    <div style="display: flex; color: var(--success); margin: 12px 0 !important">
+                        <fa icon="check-circle" style="margin-top: 3px; margin-right: 10px;"></fa>
+                        <div>{{ $t('earn.transfer.success.message') }}</div>
+                    </div>
                     <button depressed class="button_success" small block @click="startAgain">
                         {{ $t('earn.transfer.success.again') }}
                     </button>
@@ -718,7 +718,7 @@ h2 {
 
 .fees {
     margin: 14px 0;
-    border-top: 1px solid var(--bg-light);
+    border-top: 1px solid var(--bg-wallet-lighter);
     padding-top: 14px;
 }
 
