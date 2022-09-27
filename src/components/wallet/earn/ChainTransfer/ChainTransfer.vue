@@ -84,7 +84,9 @@
                 </div>
                 <div v-if="isSuccess" class="complete">
                     <h4 style="font-weight: 400">{{ $t('earn.transfer.success.title') }}</h4>
-                    <div style="display: flex; color: var(--success); margin: 12px 0 !important">
+                    <div
+                        style="display: flex; color: var(--success); margin: 0 0 12px 0 !important"
+                    >
                         <img src="/img/icons/check.svg" />
                         <div>{{ $t('earn.transfer.success.message') }}</div>
                     </div>
