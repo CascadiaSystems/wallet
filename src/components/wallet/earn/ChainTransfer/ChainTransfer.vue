@@ -593,7 +593,6 @@ export default class ChainTransfer extends Vue {
         background-color: var(--bg-light);
         border-radius: 4px;
         padding: 12px 18px;
-        box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
     }
 }
 
