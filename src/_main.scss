@@ -283,7 +283,7 @@ $pink-light: #ff8080;
 $pink-extra-light: #ffe6e6;
 $gray: #f5f6fa;
 $white: #fff;
-$green: #6bc688;
+$green: #45bd62;
 $green-light: #83f2a6;
 $green-extra-light: #a9efbf;
 
@@ -457,7 +457,7 @@ html[data-theme='day'] {
     --selection-color: #6a91d8;
     --link-secondary: #6e7479;
     --error: #f00;
-    --success: #6bc688;
+    --success: #45bd62;
     --info: #2c7490;
     --info-1: 44, 116, 144;
 
@@ -478,14 +478,13 @@ html[data-theme='night'] {
     --selection-color: #6a91d8;
     --link-secondary: #6e7479;
     --error: #e84970;
-    --success: #6bc688;
+    --success: #45bd62;
     --info: #4c8caf;
     --info-1: 76, 140, 175;
 
     --bg-wallet: #18191a;
     --bg-wallet-light: #242526;
     --bg-wallet-lighter: #3a3b3c;
-    --bg-wallet-disable: #3a3b3c;
 
     --warning: #d49534;
 }

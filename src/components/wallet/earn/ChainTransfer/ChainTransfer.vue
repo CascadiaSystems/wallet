@@ -12,20 +12,20 @@
 
                 <div v-if="!isSuccess && !isLoading">
                     <div v-if="!isImportErr" class="fees">
-                        <h4>{{ $t('earn.transfer.fee') }}</h4>
+                        <h4 style="font-weight: 400;">{{ $t('earn.transfer.fee') }}</h4>
 
                         <p>
                             Export Fee
-                            <span>{{ exportFee.toLocaleString() }} AVAX</span>
+                            <span>{{ exportFee.toLocaleString() }} SOPHON</span>
                         </p>
                         <p>
                             Import Fee
-                            <span>{{ importFee.toLocaleString() }} AVAX</span>
+                            <span>{{ importFee.toLocaleString() }} SOPHON</span>
                         </p>
                         <p>
                             <b>
                                 Total
-                                <span>{{ fee.toLocaleString() }} AVAX</span>
+                                <span>{{ fee.toLocaleString() }} SOPHON</span>
                             </b>
                         </p>
                     </div>
@@ -35,21 +35,21 @@
                             <p>
                                 {{ $t('earn.transfer.err_desc') }}
                             </p>
-                            <v-btn
+                            <button
                                 depressed
-                                class="button_secondary"
+                                class="button_success"
                                 small
                                 block
                                 @click="startAgain"
                             >
                                 {{ $t('earn.transfer.success.again') }}
-                            </v-btn>
+                            </button>
                         </template>
                         <template v-else>
-                            <v-btn
+                            <button
                                 v-if="!isConfirm"
                                 data-cy="confirm"
-                                class="button_primary"
+                                class="button_confirm"
                                 @click="confirm"
                                 :disabled="!canSubmit"
                                 block
@@ -57,42 +57,42 @@
                                 :loading="isLoading"
                             >
                                 {{ $t('earn.transfer.confirm') }}
-                            </v-btn>
+                            </button>
                             <template v-else>
-                                <v-btn
+                                <button
                                     data-cy="submit"
-                                    class="button_secondary"
+                                    class="button_transfer"
                                     @click="submit"
                                     :loading="isLoading"
                                     depressed
                                     block
                                 >
                                     {{ $t('earn.transfer.submit') }}
-                                </v-btn>
-                                <v-btn
+                                </button>
+                                <button
                                     v-if="!isLoading"
                                     data-cy="cancel"
-                                    style="color: var(--primary-color); margin: 12px 0 !important"
+                                    class="button_cancel"
                                     @click="cancelConfirm"
                                     depressed
                                     text
                                     block
                                 >
                                     {{ $t('earn.transfer.cancel') }}
-                                </v-btn>
+                                </button>
                             </template>
                         </template>
                     </div>
                 </div>
                 <div v-if="isSuccess" class="complete">
-                    <h4>{{ $t('earn.transfer.success.title') }}</h4>
-                    <p style="color: var(--success); margin: 12px 0 !important">
-                        <fa icon="check-circle"></fa>
-                        {{ $t('earn.transfer.success.message') }}
-                    </p>
-                    <v-btn depressed class="button_secondary" small block @click="startAgain">
+                    <h4 style="font-weight: 400;">{{ $t('earn.transfer.success.title') }}</h4>
+                    <div style="display: flex; color: var(--success); margin: 12px 0 !important">
+                        <fa icon="check-circle" style="margin-top: 3px; margin-right: 10px;"></fa>
+                        <div>{{ $t('earn.transfer.success.message') }}</div>
+                    </div>
+                    <button depressed class="button_success" small block @click="startAgain">
                         {{ $t('earn.transfer.success.again') }}
-                    </v-btn>
+                    </button>
                 </div>
             </div>
             <div class="right_col">
@@ -696,7 +696,7 @@ h2 {
     }
 
     label {
-        font-weight: bold;
+        font-weight: 400;
         font-size: 12px;
     }
 
@@ -718,7 +718,7 @@ h2 {
 
 .fees {
     margin: 14px 0;
-    border-top: 1px solid var(--bg-light);
+    border-top: 1px solid var(--bg-wallet-lighter);
     padding-top: 14px;
 }
 
@@ -749,7 +749,58 @@ h2 {
         word-break: keep-all !important;
     }
 }
+.button_success,
+.button_transfer {
+    width: 100%;
+    margin-bottom: 12px;
+    border-radius: 0px !important;
+    padding: 12px 24px;
+    min-width: 140px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase !important;
+    background-color: var(--primary-color-light);
+    color: var(--bg);
 
+    &:hover {
+        background-color: var(--primary-color);
+    }
+
+    &:disabled {
+        background-color: var(--bg-wallet-disable) !important;
+    }
+}
+.button_confirm,
+.button_cancel {
+    width: 100%;
+    margin-bottom: 22px;
+    border-radius: 0px !important;
+    padding: 12px 24px;
+    min-width: 140px;
+    border-radius: 0px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase !important;
+    border: 1px solid var(--primary-color-light);
+    color: var(--primary-color-light);
+    background-color: var(--bg-light);
+
+    a {
+        text-decoration: none !important;
+    }
+
+    &:hover {
+        border: 1px solid var(--primary-color);
+        color: var(--primary-color);
+    }
+
+    &:disabled {
+        border: 1px solid var(--bg-wallet-lighter);
+        color: var(--bg-wallet-lighter);
+    }
+}
 @include main.medium-device {
     .cols {
         //display: grid;

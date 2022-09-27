@@ -142,7 +142,8 @@ export default class Wallet extends Vue {
 #wallet_router {
     padding: 22px 20px;
     background-color: var(--bg-wallet-light);
-    border-radius: 4px;
+    border: 1px solid var(--bg-wallet-lighter);
+    border-radius: 0px;
 }
 
 .page_fade-enter-active,

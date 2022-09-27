@@ -172,7 +172,7 @@
     },
     "cross_chain": {
         "title": "Cross Chain",
-        "desc": "Transfer tokens between Exchange (X) , Platform (P) and Contract (C) chains.",
+        "desc": "Transfer tokens between Native chain and EVM chain.",
         "card": {
             "source": "Source",
             "destination": "Destination",
