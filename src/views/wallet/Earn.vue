@@ -289,7 +289,6 @@ span {
     font-size: 14px;
     font-weight: 400;
     letter-spacing: 0.5px;
-    text-transform: uppercase !important;
     background-color: var(--primary-color-light);
     color: var(--bg);
 
