@@ -41,8 +41,7 @@
             ></AvaxInput>
         </div>
         <div class="confirmation_val" v-else>
-            <label>{{ $t('earn.transfer.amount') }}</label>
-            <p>{{ formAmtText }} SOPHON</p>
+            <p>$ {{ formAmtText }}</p>
         </div>
     </div>
 </template>
@@ -203,9 +202,12 @@ select {
 }
 
 .confirmation_val {
+    margin: 0px !important;
     p {
-        padding: 6px 12px;
+        padding: 0px;
         text-align: right;
+        font-size: 14px;
+        color: var(--primary-color-light);
         background-color: var(--bg-light);
     }
 }
