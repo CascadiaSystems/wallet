@@ -27,8 +27,12 @@ h1 {
 }
 .head {
     margin-bottom: 14px;
-    //display: flex;
-    //align-items: center;
-    //justify-content: space-between;
+    h1 {
+        font-size: 24px;
+    }
+    p {
+        color: var(--primary-color-light);
+        font-size: 16px;
+    }
 }
 </style>

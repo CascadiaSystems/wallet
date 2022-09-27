@@ -42,7 +42,9 @@
         </div>
         <div class="confirmation_val" v-else>
             <label>{{ $t('earn.transfer.amount') }}</label>
-            <p>{{ formAmtText }} SOPHON</p>
+            <div class="amount">{{ formAmtText }} SOPHON</div>
+
+            <div class="balance">$ {{ balance.toLocaleString(2) }}</div>
         </div>
     </div>
 </template>
@@ -162,8 +164,6 @@ export default class Form extends Vue {
         display: flex;
         margin: 13px 0;
     }
-
-    padding-bottom: 14px;
 }
 label {
     color: var(--primary-color);
@@ -193,20 +193,24 @@ select {
     //}
 }
 
-.balance {
-    font-size: 13px;
-    color: var(--primary-color-light);
-    span {
-        float: right;
-    }
-    margin-top: 4px !important;
-}
-
 .confirmation_val {
-    p {
-        padding: 6px 12px;
+    margin-bottom: 0px !important;
+    .amount {
+        width: 100%;
+        color: var(--primary-color-light);
+        background-color: var(--bg-wallet);
+        border: 1px solid var(--bg-wallet-lighter) !important;
+        padding: 11px 12px;
+        font-size: 16px;
+        outline: none;
+        transition-duration: 0.1s;
         text-align: right;
-        background-color: var(--bg-light);
+    }
+    .balance {
+        font-size: 14px;
+        color: var(--primary-color-light);
+        text-align: right;
+        margin: 5px 0 !important;
     }
 }
 
