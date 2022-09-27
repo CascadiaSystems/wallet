@@ -12,7 +12,7 @@
 
                 <div v-if="!isSuccess && !isLoading">
                     <div v-if="!isImportErr" class="fees">
-                        <h4>{{ $t('earn.transfer.fee') }}</h4>
+                        <h4 style="font-weight: 400;">{{ $t('earn.transfer.fee') }}</h4>
 
                         <p>
                             Export Fee
@@ -85,7 +85,7 @@
                     </div>
                 </div>
                 <div v-if="isSuccess" class="complete">
-                    <h4>{{ $t('earn.transfer.success.title') }}</h4>
+                    <h4 style="font-weight: 400;">{{ $t('earn.transfer.success.title') }}</h4>
                     <div style="display: flex; color: var(--success); margin: 12px 0 !important">
                         <fa icon="check-circle" style="margin-top: 3px; margin-right: 10px;"></fa>
                         <div>{{ $t('earn.transfer.success.message') }}</div>
@@ -696,7 +696,7 @@ h2 {
     }
 
     label {
-        font-weight: bold;
+        font-weight: 400;
         font-size: 12px;
     }
 
