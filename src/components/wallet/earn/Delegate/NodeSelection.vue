@@ -13,8 +13,8 @@
 
             <div class="rigt_but">
                 <button @click="openFilters">
+                    <img src="/img/icons/filter.svg" />
                     {{ $t('earn.delegate.filter.title') }}
-                    <fa icon="filter"></fa>
                 </button>
             </div>
         </div>
@@ -58,7 +58,6 @@ export default class NodeSelection extends Vue {
     row-gap: 14px;
     grid-template-rows: max-content 1fr;
 }
-
 .val_list {
     overflow: auto;
     height: 100%;
@@ -66,11 +65,12 @@ export default class NodeSelection extends Vue {
 }
 
 .search {
-    padding: 3px 12px;
-    border-radius: 12px;
-    background-color: var(--bg-light);
-    margin-left: 30px;
-    color: var(--primary-color);
+    padding: 4px 12px;
+    border-radius: 0px;
+    background-color: var(--bg);
+    border: 1px solid var(--bg-wallet-lighter);
+    margin-left: 12px;
+    color: var(--bg-wallet-lighter);
 }
 
 .rigt_but {
@@ -78,6 +78,12 @@ export default class NodeSelection extends Vue {
 
     button {
         color: var(--primary-color-light);
+        display: flex;
+        align-items: center;
+
+        img {
+            margin-right: 5px;
+        }
 
         &:hover {
             color: var(--primary-color);
