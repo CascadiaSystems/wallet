@@ -753,9 +753,16 @@ label {
     transition-duration: 0.2s;
     &[type='local'] {
         .reward_addr_in {
+            display: flex;
+            flex-direction: row-reverse;
             opacity: 0.3;
             user-select: none;
             pointer-events: none;
+            border: 1px solid var(--bg-wallet-lighter);
+            background-color: var(--bg);
+            .readerIn {
+                border-right: 0px;
+            }
         }
     }
 }
