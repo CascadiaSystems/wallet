@@ -3,8 +3,8 @@
         <NodeSelection v-if="!selected" @select="onselect" class="node_selection"></NodeSelection>
         <div class="cols" v-else>
             <div class="node_col">
-                <button @click="selected = null" class="close_but button_secondary">
-                    <fa icon="sync"></fa>
+                <button @click="selected = null" class="close_but">
+                    <img src="/img/icons/refresh.svg" />
                     Change Node
                 </button>
                 <NodeCard :node="selected"></NodeCard>
@@ -662,10 +662,17 @@ label {
 }
 
 .close_but {
-    padding: 2px 14px;
-    font-size: 13px;
-    border-radius: 6px;
+    color: var(--bg);
+    background-color: var(--primary-color-light);
+    padding: 4px 12px;
+    font-size: 14px;
+    border-radius: 0px;
     margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    img {
+        margin-right: 8px;
+    }
 }
 
 .node_col {
