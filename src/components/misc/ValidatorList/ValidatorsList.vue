@@ -23,7 +23,7 @@
                                 <img src="/img/icons/users.svg" />
                             </Tooltip>
                         </th>
-                        <th>{{ $t('earn.delegate.list.end') }}</th>
+                        <th style="text-align: right">{{ $t('earn.delegate.list.end') }}</th>
                         <!--                        <th>-->
                         <!--                            {{ $t('earn.delegate.list.up') }}-->
                         <!--                            <Tooltip-->
@@ -34,7 +34,7 @@
                         <!--                            </Tooltip>-->
                         <!--                        </th>-->
                         <th>{{ $t('earn.delegate.list.fee') }}</th>
-                        <th>{{ $t('earn.delegate.list.action') }}</th>
+                        <th style="text-align: right">{{ $t('earn.delegate.list.action') }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -137,12 +137,18 @@ table {
     width: 100%;
     border-collapse: collapse;
 }
+
+thead {
+    border-bottom: 1px solid var(--bg-wallet-lighter);
+}
+
 tr {
 }
+
 th {
     position: sticky;
     top: 0;
-    padding: 2px 14px;
+    padding: 2px 14px 8px;
     font-size: 14px;
     background-color: var(--bg-wallet-light);
 }
