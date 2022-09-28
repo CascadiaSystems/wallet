@@ -148,8 +148,12 @@ label {
 }
 
 .desc {
-    font-size: 13px;
+    font-size: 14px;
     margin-bottom: 8px !important;
     color: var(--primary-color-light);
+}
+
+h4 {
+    font-weight: 400;
 }
 </style>

@@ -687,7 +687,7 @@ input {
 }
 
 h4 {
-    font-weight: 400;
+    font-weight: 400 !important;
     font-size: 16px;
 }
 
@@ -798,11 +798,6 @@ label {
     }
 }
 
-.expandable {
-    p {
-        font-size: 14px;
-    }
-}
 .tx_status {
     display: flex;
     justify-content: space-between;
