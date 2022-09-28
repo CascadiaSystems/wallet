@@ -1,7 +1,7 @@
 <template>
     <div class="avax_input">
         <div class="col1 hover_border">
-            <button class="max_but" @click="maxOut" v-if="max">MAX</button>
+            <button class="max_but" @click="maxOut" v-if="max">Max</button>
             <BigNumInput
                 ref="amt_in"
                 class="amt_in"
@@ -142,7 +142,7 @@ export default class AvaxInput extends Vue {
     width: 100%;
     box-sizing: border-box;
     //overflow: auto;
-    padding: 8px 14px;
+    padding: 11px 12px;
     position: relative;
 
     //&:hover {
@@ -154,7 +154,7 @@ export default class AvaxInput extends Vue {
 }
 
 .ticker {
-    padding: 8px 14px;
+    padding: 11px 12px;
     color: var(--primary-color-light);
 }
 
@@ -162,7 +162,7 @@ p {
     text-align: center;
 }
 .max_but {
-    font-size: 13px;
+    font-size: 16px;
     opacity: 0.4;
     &:hover {
         opacity: 1;

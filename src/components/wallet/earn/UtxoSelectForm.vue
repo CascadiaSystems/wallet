@@ -11,9 +11,8 @@
 
         <div class="available">
             <div>
-                <label>{{ $t('earn.shared.utxo_select.available') }}</label>
                 <p>
-                    <span>{{ selectedBalanceText }} AVAX</span>
+                    <span>{{ selectedBalanceText }} SOPHON</span>
                 </p>
             </div>
 
@@ -123,8 +122,10 @@ export default class UtxoSelectForm extends Vue {
 <style scoped lang="scss">
 .available {
     max-width: 100%;
-    padding: 6px 14px;
-    background-color: var(--bg-light);
+    padding: 11px 14px;
+    color: var(--primary-color-light);
+    background-color: var(--bg);
+    border: 1px solid var(--bg-wallet-lighter);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -147,8 +148,12 @@ label {
 }
 
 .desc {
-    font-size: 13px;
+    font-size: 14px;
     margin-bottom: 8px !important;
     color: var(--primary-color-light);
+}
+
+h4 {
+    font-weight: 400;
 }
 </style>

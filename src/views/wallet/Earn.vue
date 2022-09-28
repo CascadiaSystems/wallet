@@ -1,11 +1,11 @@
 <template>
     <div class="earn_page">
         <div class="header">
-            <h1>{{ $t('earn.title') }}</h1>
-            <h1 class="subtitle" v-if="pageNow">
-                / {{ subtitle }}
-                <span @click="cancel"><fa icon="times"></fa></span>
-            </h1>
+            <div class="header-title">
+                <h1>{{ $t('earn.title') }}</h1>
+                <h1 class="subtitle" v-if="pageNow">/ {{ subtitle }}</h1>
+            </div>
+            <div class="close" @click="cancel" v-if="pageNow"><fa icon="times"></fa></div>
         </div>
         <transition name="fade" mode="out-in">
             <div v-if="!pageNow">
@@ -18,9 +18,9 @@
                         <p style="flex-grow: 1">
                             {{ $t('earn.validate_card.desc') }}
                         </p>
-                        <p v-if="!canValidate" class="no_balance">
+                        <!-- <p v-if="!canValidate" class="no_balance">
                             {{ $t('earn.warning_1', [minStakeAmt.toLocaleString()]) }}
-                        </p>
+                        </p> -->
                         <button
                             class="button"
                             data-cy="validate"
@@ -39,9 +39,9 @@
                         <p style="flex-grow: 1">
                             {{ $t('earn.delegate_card.desc') }}
                         </p>
-                        <p v-if="!canDelegate" class="no_balance">
+                        <!-- <p v-if="!canDelegate" class="no_balance">
                             {{ $t('earn.warning_2', [minDelegationAmt.toLocaleString()]) }}
-                        </p>
+                        </p> -->
                         <button
                             class="button"
                             data-cy="delegate"
@@ -194,26 +194,28 @@ export default class Earn extends Vue {
     grid-template-rows: max-content 1fr;
 }
 .header {
-    h1 {
-        font-weight: normal;
-    }
     display: flex;
-    /*justify-content: space-between;*/
-    /*align-items: center;*/
     align-items: center;
-
-    .subtitle {
-        margin-left: 0.5em;
-        /*font-size: 20px;*/
-        color: var(--primary-color-light);
-        font-weight: lighter;
+    justify-content: space-between;
+    .header-title {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        h1 {
+            font-weight: 400;
+            font-size: 24px !important;
+        }
+        .subtitle {
+            margin-left: 0.5em;
+            font-size: 14px !important;
+            color: var(--primary-color-light);
+        }
     }
 
-    span {
-        margin-left: 1em;
-
+    .close {
+        margin-right: 0.5em;
         &:hover {
-            color: var(--primary-color);
+            color: var(--primary-color-light);
             cursor: pointer;
         }
     }
@@ -281,7 +283,6 @@ span {
 }
 
 .button {
-    width: 100%;
     border-radius: 0px !important;
     padding: 4px 12px;
     min-width: 140px;
