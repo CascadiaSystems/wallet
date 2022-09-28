@@ -529,14 +529,14 @@
             "form": {
                 "period": {
                     "label": "Staking End Date",
-                    "desc": "Your AVAX tokens will be locked until this date.",
+                    "desc": "Your SOPHON tokens will be locked until this date.",
                     "start": "Start Date & Time",
                     "end": "End Date & Time"
                 },
                 "amount": {
                     "label": "Stake Amount",
-                    "desc": "The amount of AVAX to lock for staking.",
-                    "desc2": "The available delegation amount for this node is {0} AVAX"
+                    "desc": "The amount of SOPHON to lock for staking.",
+                    "desc2": "The available delegation amount for this node is {0} SOPHON"
                 },
                 "reward": {
                     "label": "Reward Address",

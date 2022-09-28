@@ -88,7 +88,6 @@ export default class AvaxInput extends Vue {
     .amt_in {
         color: var(--primary-color);
         font-size: 15px;
-        font-family: monospace;
         flex-grow: 1;
         flex-shrink: 1;
         display: block;
@@ -128,7 +127,6 @@ export default class AvaxInput extends Vue {
     }
 
     span {
-        font-family: monospace;
         padding-left: 14px;
     }
 }

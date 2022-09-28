@@ -651,7 +651,7 @@ form {
 }
 
 h4 {
-    font-weight: bold;
+    font-weight: 400;
 }
 
 label {
