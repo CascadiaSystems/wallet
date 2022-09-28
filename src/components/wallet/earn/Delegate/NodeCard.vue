@@ -1,14 +1,16 @@
 <template>
     <div class="node_card">
-        <p class="node_id">{{ node.nodeID }}</p>
+        <div>
+            <label>Node ID</label>
+            <p class="node_id">{{ node.nodeID }}</p>
+        </div>
         <!--        <div class="meta_row"></div>-->
         <div>
             <label>Fee</label>
             <p>{{ node.fee.toFixed(2) }}%</p>
         </div>
-        <div>
+        <!-- <div>
             <label>Uptime</label>
-            <!--            <p>{{ uptimeText }}</p>-->
             <p style="font-size: 0.8rem">
                 Please refer to
                 <a :href="vscoutURL" target="_blank">VScout</a>
@@ -16,7 +18,7 @@
                 <a :href="avascanURL" target="_blank">Avascan</a>
                 to get more information about a node's uptime.
             </p>
-        </div>
+        </div> -->
         <div>
             <label>Delegators</label>
             <p>{{ node.numDelegators }}</p>
@@ -26,11 +28,11 @@
         <!--        </div>-->
         <div>
             <label>Active Stake</label>
-            <p>{{ totalStakeBig.toLocaleString(0) }} AVAX</p>
+            <p>{{ totalStakeBig.toLocaleString(0) }} SOPHON</p>
         </div>
         <div>
             <label>Available Stake</label>
-            <p>{{ remainingStakeBig.toLocaleString(0) }} AVAX</p>
+            <p>{{ remainingStakeBig.toLocaleString(0) }} SOPHON</p>
         </div>
         <!--        <div class="dates"></div>-->
         <div class="date_row">
@@ -96,26 +98,25 @@ export default class NodeCard extends Vue {
 .node_card {
     //background-color: rgba(0, 0, 0, 0.02);
     background-color: var(--bg-light);
-    border-radius: 4px;
+    border-radius: 0px;
     //width: max-content;
-    box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.2);
 
     > div {
-        padding: 6px 14px;
-        border-bottom: 1px solid var(--bg);
-        &:last-of-type {
-            border: none;
-        }
+        padding: 16px 0px;
     }
 }
 
 .node_id {
+    max-width: 250px;
     word-break: break-all;
     //width: max-content;
-    font-size: 13px;
-    padding: 6px 14px;
+    font-size: 14px;
+    padding: 6px 0px;
     background-color: var(--bg-light);
-    border-bottom: 2px solid var(--bg);
+    p {
+        font-size: 16px;
+        color: var(--primary-color);
+    }
 }
 
 .meta_row {
@@ -124,18 +125,19 @@ export default class NodeCard extends Vue {
     column-gap: 14px;
 }
 label {
-    font-size: 13px;
+    font-size: 14px;
+    color: var(--primary-color-light);
 }
 p {
-    font-size: 15px;
-    color: var(--primary-color-light);
+    font-size: 16px;
+    color: var(--primary-color);
 }
 
 .dates {
     display: grid;
     grid-template-columns: 1fr 1fr;
     p {
-        font-size: 13px;
+        font-size: 14px;
     }
 }
 
