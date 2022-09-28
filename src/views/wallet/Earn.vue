@@ -224,12 +224,13 @@ export default class Earn extends Vue {
     margin: 30px 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 14px;
+    grid-gap: 16px;
     //display: flex;
     //justify-content: space-evenly;
     //padding: 60px;
 
     > div {
+        width: 100%;
         justify-self: center;
         display: flex;
         flex-direction: column;
@@ -257,7 +258,7 @@ export default class Earn extends Vue {
     p {
         color: var(--primary-color-light);
         font-size: 14px !important;
-        margin: 14px 0 !important;
+        margin: 8px 0 14px 0 !important;
     }
 
     .no_balance {
@@ -284,7 +285,7 @@ span {
 
 .button {
     border-radius: 0px !important;
-    padding: 4px 12px;
+    padding: 6px 12px;
     min-width: 140px;
     border-radius: 6px;
     font-size: 14px;
