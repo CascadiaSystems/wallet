@@ -17,3 +17,8 @@ export default {
     },
 }
 </script>
+<style scoped lang="scss">
+button {
+    display: flex;
+}
+</style>

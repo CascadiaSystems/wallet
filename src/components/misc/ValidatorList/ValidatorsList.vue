@@ -17,15 +17,11 @@
                         </th>
                         <th style="text-align: right">
                             {{ $t('earn.delegate.list.aval_stake') }}
-                            <Tooltip
-                                style="display: inline-block"
-                                :text="$t('earn.delegate.list.aval_stake_tip')"
-                            >
-                                <fa icon="question-circle"></fa>
-                            </Tooltip>
                         </th>
                         <th>
-                            <Tooltip text="Number of Delegators"><fa icon="users"></fa></Tooltip>
+                            <Tooltip text="Number of Delegators">
+                                <img src="/img/icons/users.svg" />
+                            </Tooltip>
                         </th>
                         <th>{{ $t('earn.delegate.list.end') }}</th>
                         <!--                        <th>-->
@@ -38,7 +34,7 @@
                         <!--                            </Tooltip>-->
                         <!--                        </th>-->
                         <th>{{ $t('earn.delegate.list.fee') }}</th>
-                        <th></th>
+                        <th>{{ $t('earn.delegate.list.action') }}</th>
                     </tr>
                 </thead>
                 <tbody>

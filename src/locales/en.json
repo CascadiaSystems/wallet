@@ -514,6 +514,7 @@
                 "up": "Uptime",
                 "up_tip": "Relative to the node this wallet is connected to.",
                 "fee": "Fee",
+                "action": "Action",
                 "empty": {
                     "title": "No Validators Found",
                     "desc": "Validators need to be actively staking to be found."
