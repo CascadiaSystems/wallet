@@ -434,13 +434,13 @@
             "label_1": "Node ID",
             "duration": {
                 "label": "Staking End Date",
-                "desc": "Your AVAX tokens will be locked until this date.",
+                "desc": "Your SOPHON tokens will be locked until this date.",
                 "start": "Start Date & Time",
                 "end": "End Date & Time"
             },
             "amount": {
                 "label": "Stake Amount",
-                "desc": "The amount of AVAX to lock for staking."
+                "desc": "The amount of SOPHON to lock for staking."
             },
             "fee": {
                 "label": "Delegation Fee",

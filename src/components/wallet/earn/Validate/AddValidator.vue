@@ -39,6 +39,7 @@
                                 step="0.01"
                                 v-model="delegationFee"
                                 @change="onFeeChange"
+                                style="width: 50%"
                             />
                         </div>
                         <div class="reward_in" style="margin: 30px 0" :type="rewardDestination">
@@ -57,6 +58,7 @@
                                 <button
                                     @click="rewardSelect('custom')"
                                     :selected="this.rewardDestination === 'custom'"
+                                    style="color: var(--bg-wallet-lighter)"
                                 >
                                     {{ $t('earn.delegate.form.reward.chip_2') }}
                                 </button>
@@ -647,7 +649,7 @@ export default class AddValidator extends Vue {
 form {
     display: grid;
     grid-template-columns: 1fr 340px;
-    column-gap: 90px;
+    column-gap: 200px;
 }
 .ins_col {
     max-width: 490px;
@@ -666,19 +668,26 @@ form {
 }
 
 input {
-    color: var(--primary-color);
-    background-color: var(--bg-light);
-    padding: 6px 14px;
+    width: 100%;
+    border-radius: 0px !important;
+    padding: 11px 12px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    background-color: var(--bg-wallet);
+    color: var(--bg-primary-color-light);
+    border: 1px solid var(--bg-wallet-lighter);
 }
 
 .desc {
-    font-size: 13px;
+    font-size: 14px;
     margin-bottom: 8px !important;
     color: var(--primary-color-light);
 }
 
 h4 {
-    font-weight: bold;
+    font-weight: 400;
+    font-size: 16px;
 }
 
 label {
@@ -754,15 +763,19 @@ label {
 .reward_tabs {
     margin-bottom: 8px;
     font-size: 13px;
+    color: var(--primary-color-light);
+    padding: 0;
     button {
         color: var(--primary-color-light);
-
+        background-color: var(--bg);
+        padding: 2px 8px;
         &:hover {
             color: var(--primary-color);
         }
 
         &[selected] {
-            color: var(--secondary-color);
+            color: var(--bg);
+            background-color: var(--primary-color-light);
         }
     }
 

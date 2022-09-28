@@ -94,12 +94,9 @@ $s-size-mobile: 14px;
     }
 }
 
-
-video{
+video {
     outline: none;
 }
-
-
 
 *[tooltip]:hover:before {
     border-radius: 4px;
@@ -124,7 +121,7 @@ textarea,
 input {
     @include highlight-border;
 
-    &[disabled]{
+    &[disabled] {
         border-color: transparent !important;
     }
 }
@@ -132,13 +129,14 @@ input {
 .hover_border {
     @include highlight-border;
 
-    &[disabled]{
+    &[disabled] {
         border-color: transparent !important;
     }
 }
 
-input[type='number']{
-    &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+input[type='number'] {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
     }
@@ -261,7 +259,7 @@ label {
     }
 }
 
-.single_line_input{
+.single_line_input {
     display: block;
     width: 100%;
     padding: 5px 12px;
@@ -395,7 +393,7 @@ textarea {
         color: var(--primary-color-light) !important;
     }
 
-    &[disabled]{
+    &[disabled] {
         border-color: transparent !important;
     }
 }
@@ -419,17 +417,17 @@ textarea {
     }
 }
 
-.v-input--checkbox{
-    label{
+.v-input--checkbox {
+    label {
         color: var(--primary-color) !important;
     }
 }
 
 .vdatetime {
-    background-color: var(--bg-light) !important;
-    padding: 6px 12px !important;
+    background-color: var(--bg-wallet) !important;
+    padding: 12px 12px !important;
     input {
-        color: var(--primary-color) !important;
+        color: var(--primary-color-light) !important;
     }
 }
 
@@ -440,7 +438,7 @@ textarea {
 
     @include highlight-border;
 
-    &[disabled]{
+    &[disabled] {
         border-color: transparent !important;
     }
 }
@@ -468,11 +466,11 @@ html[data-theme='day'] {
 }
 
 html[data-theme='night'] {
-    --bg: #18191A;
+    --bg: #18191a;
     --bg-1: 36, 39, 41;
     --bg-light: #242526;
     --bg-light-1: 58 59 60;
-    --primary-color: #e4e6eB;
+    --primary-color: #e4e6eb;
     --primary-color-light: #b0b3b8;
     --secondary-color: #e84970;
     --selection-color: #6a91d8;
@@ -496,25 +494,25 @@ p.err {
     white-space: normal;
 }
 
-.no_scroll_bar{
+.no_scroll_bar {
     &::-webkit-scrollbar {
         display: none;
     }
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
 
-.flex-row{
+.flex-row {
     display: flex;
     flex-direction: row;
 }
 
-.flex-column{
+.flex-column {
     display: flex;
     flex-direction: column;
 }
 
-.subtext{
+.subtext {
     color: var(--primary-color-light);
     font-size: 0.8em;
 }
