@@ -64,6 +64,7 @@ export default class TxStateCard extends Vue {
 .tx_state_card {
     position: relative;
     background-color: var(--bg-light);
+    padding: 12px 0px;
     //height: max-content;
 
     &[state='0'] {

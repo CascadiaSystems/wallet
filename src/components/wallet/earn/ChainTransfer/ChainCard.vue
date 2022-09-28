@@ -118,6 +118,7 @@ label {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 14px;
+    padding: 12px 18px;
 }
 
 .input_group {
