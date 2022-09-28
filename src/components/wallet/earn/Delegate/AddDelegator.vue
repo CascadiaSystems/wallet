@@ -26,12 +26,7 @@
                         <!--                        <p class="desc">-->
                         <!--                            {{ $t('earn.delegate.form.amount.desc2', [remainingAmtText]) }}-->
                         <!--                        </p>-->
-                        <AvaxInput
-                            v-model="stakeAmt"
-                            :max="maxAmt"
-                            class="amt_in"
-                            :balance="utxosBalanceBig"
-                        ></AvaxInput>
+                        <AvaxInput v-model="stakeAmt" :max="maxAmt" class="amt_in"></AvaxInput>
                     </div>
                     <div class="reward_in" style="margin: 30px 0" :type="rewardDestination">
                         <h4>{{ $t('earn.delegate.form.reward.label') }}</h4>
@@ -96,69 +91,69 @@
                     :node-i-d="formNodeID"
                 ></ConfirmPage>
             </transition-group>
-            <div>
+            <div style="border-left: 1px solid var(--bg-wallet-lighter)">
                 <div v-if="!isSuccess" class="summary">
                     <CurrencySelect
                         v-model="currency_type"
                         currency="currency_sel"
                     ></CurrencySelect>
                     <div>
-                        <label>{{ $t('earn.delegate.summary.duration') }} *</label>
-                        <p>{{ stakingDurationText }}</p>
-                    </div>
-                    <div>
-                        <label>{{ $t('earn.delegate.summary.reward') }}</label>
-                        <p v-if="currency_type === 'AVAX'">
-                            {{ estimatedReward.toLocaleString(2) }} AVAX
-                        </p>
-                        <p v-if="currency_type === 'USD'">
-                            ${{ estimatedRewardUSD.toLocaleString(2) }} USD
-                        </p>
-                    </div>
-                    <div>
-                        <label>{{ $t('earn.delegate.summary.fee') }}</label>
-                        <p v-if="currency_type === 'AVAX'">
-                            {{ totalFeeBig.toLocaleString(2) }} AVAX
+                        <label>{{ $t('earn.delegate.summary.max_duration_amount') }}</label>
+                        <p v-if="currency_type === 'SOPHON'">
+                            {{ totalFeeBig.toLocaleString(2) }} SOPHON
                         </p>
                         <p v-if="currency_type === 'USD'">
                             ${{ totalFeeUsdBig.toLocaleString(2) }} USD
                         </p>
                     </div>
+                    <div>
+                        <label>{{ $t('earn.delegate.summary.duration') }}</label>
+                        <p>{{ stakingDurationText }}</p>
+                    </div>
+                    <div>
+                        <label>{{ $t('earn.delegate.summary.reward') }}</label>
+                        <p v-if="currency_type === 'SOPHON'">
+                            {{ estimatedReward.toLocaleString(2) }} SOPHON
+                        </p>
+                        <p v-if="currency_type === 'USD'">
+                            ${{ estimatedRewardUSD.toLocaleString(2) }} USD
+                        </p>
+                    </div>
 
                     <div>
                         <label style="margin: 8px 0 !important">
-                            * {{ $t('earn.delegate.summary.warn') }}
+                            {{ $t('earn.delegate.summary.warn') }}
                         </label>
                         <p class="err">{{ err }}</p>
-                        <v-btn
+                        <button
                             v-if="!isConfirm"
                             @click="confirm"
-                            class="button_secondary"
+                            class="button_confirm"
                             depressed
                             :loading="isLoading"
                             :disabled="!canSubmit"
                             block
                         >
-                            {{ $t('earn.delegate.confirm') }}
-                        </v-btn>
+                            {{ $t('earn.delegate.view_rewards') }}
+                        </button>
                         <template v-else>
-                            <v-btn
+                            <button
                                 @click="submit"
-                                class="button_secondary"
+                                class="button_confirm"
                                 depressed
                                 :loading="isLoading"
                                 block
                             >
                                 {{ $t('earn.delegate.submit') }}
-                            </v-btn>
-                            <v-btn
+                            </button>
+                            <button
                                 text
                                 @click="cancelConfirm"
                                 block
                                 style="color: var(--primary-color); margin-top: 20px"
                             >
                                 {{ $t('earn.delegate.cancel') }}
-                            </v-btn>
+                            </button>
                         </template>
                     </div>
                 </div>
@@ -186,9 +181,9 @@
                         <label>{{ $t('earn.delegate.success.reason') }}</label>
                         <p>{{ txReason }}</p>
                     </div>
-                    <v-btn @click="cancel" block class="button_secondary" depressed v-if="txStatus">
+                    <button @click="cancel" block class="button_confirm" depressed v-if="txStatus">
                         Back to Earn
-                    </v-btn>
+                    </button>
                 </div>
             </div>
         </div>
@@ -267,7 +262,7 @@ export default class AddDelegator extends Vue {
     formEnd: Date = new Date()
     formRewardAddr = ''
 
-    currency_type = 'AVAX'
+    currency_type = 'SOPHON'
 
     mounted() {
         this.rewardSelect('local')
@@ -734,19 +729,19 @@ label {
 /*    padding: 8px 14px;*/
 /*    width: 100%;*/
 /*}*/
-
 .reward_in {
-    width: 100%;
     transition-duration: 0.2s;
-    &[type='local'] {
-        .reward_addr_in {
-            opacity: 0.3;
-            user-select: none;
-            cursor: not-allowed;
-            pointer-events: none;
-            width: 100%;
-            height: 40px;
-            border-radius: 2px;
+    .reward_addr_in {
+        display: flex;
+        border-radius: 0px;
+        flex-direction: row-reverse;
+        user-select: none;
+        pointer-events: none;
+        border: 1px solid var(--bg-wallet-lighter);
+        background-color: var(--bg);
+        button {
+            border: 0px solid transparent !important;
+            border-left: 1px solid var(--bg-wallet-lighter) !important;
         }
     }
 }
@@ -754,15 +749,19 @@ label {
 .reward_tabs {
     margin-bottom: 8px;
     font-size: 13px;
+    color: var(--primary-color-light);
+    padding: 0;
     button {
         color: var(--primary-color-light);
-
+        background-color: var(--bg);
+        padding: 2px 8px;
         &:hover {
             color: var(--primary-color);
         }
 
         &[selected] {
-            color: var(--secondary-color);
+            color: var(--bg);
+            background-color: var(--primary-color-light);
         }
     }
 
@@ -781,9 +780,10 @@ label {
     border-left: 2px solid var(--bg-light);
     padding-left: 30px;
     > div {
-        margin-bottom: 14px;
+        margin-bottom: 16px;
         p {
-            font-size: 24px;
+            font-size: 20px;
+            font-weight: 400;
         }
     }
 
@@ -792,7 +792,7 @@ label {
         font-size: 14px;
     }
 
-    .v-btn {
+    .button {
         margin-top: 14px;
     }
 }
@@ -800,6 +800,13 @@ label {
 //.currency_sel {
 //    margin-top: 0 !important;
 //}
+.button_confirm {
+    color: var(--bg);
+    background-color: var(--bg-wallet-lighter);
+    padding: 4px;
+    width: 100%;
+    text-align: center;
+}
 
 .tx_status {
     display: flex;

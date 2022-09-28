@@ -107,6 +107,7 @@ export default class NodeCard extends Vue {
 }
 
 .node_id {
+    max-width: 250px;
     word-break: break-all;
     //width: max-content;
     font-size: 14px;

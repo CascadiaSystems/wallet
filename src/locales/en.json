@@ -566,11 +566,13 @@
             },
             "summary": {
                 "duration": "Staking Duration",
-                "reward": "Estimated Reward",
+                "reward": "Estimated Rewards",
                 "fee": "Fee",
+                "max_duration_amount": "Max Delegation Amount",
                 "warn": "If it is your first time staking, start small. Staked tokens are locked until the end of the staking period."
             },
             "confirm": "Confirm",
+            "view_rewards": "View Rewards",
             "submit": "Submit",
             "cancel": "Cancel",
             "success": {

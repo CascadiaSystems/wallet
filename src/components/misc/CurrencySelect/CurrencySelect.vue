@@ -28,7 +28,7 @@ export default class CurrencySelect extends Vue {
 button {
     margin: 0;
     border-radius: 0;
-    padding: 0 8px;
+    padding: 2px 8px;
     font-size: 14px;
     color: var(--bg-wallet-lighter);
     transition-duration: 0.2s;
