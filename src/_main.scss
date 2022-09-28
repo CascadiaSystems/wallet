@@ -401,6 +401,7 @@ textarea {
 .v-chip {
     background-color: var(--bg-light) !important;
     color: var(--primary-color) !important;
+    border-radius: 0px !important;
 }
 .v-chip--active {
     background-color: var(--primary-color) !important;
@@ -435,6 +436,14 @@ textarea {
     background-color: var(--bg) !important;
     color: var(--primary-color) !important;
     font-size: 13px;
+    .pk_in {
+        color: var(--primary-color-light);
+    }
+
+    button {
+        border-right: 0px !important;
+        border-left: 1px solid var(--bg-wallet-lighter) !important;
+    }
 
     @include highlight-border;
 

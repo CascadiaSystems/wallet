@@ -12,7 +12,7 @@
         <div class="available">
             <div>
                 <p>
-                    <span>{{ selectedBalanceText }} AVAX</span>
+                    <span>{{ selectedBalanceText }} SOPHON</span>
                 </p>
             </div>
 
@@ -123,6 +123,7 @@ export default class UtxoSelectForm extends Vue {
 .available {
     max-width: 100%;
     padding: 11px 14px;
+    color: var(--primary-color-light);
     background-color: var(--bg);
     border: 1px solid var(--bg-wallet-lighter);
     display: flex;

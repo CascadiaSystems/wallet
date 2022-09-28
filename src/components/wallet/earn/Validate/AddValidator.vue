@@ -10,7 +10,7 @@
                                 type="text"
                                 v-model="nodeId"
                                 style="width: 100%"
-                                placeholder="NodeID-"
+                                placeholder="Node ID"
                             />
                         </div>
                         <div style="margin: 30px 0">
@@ -154,7 +154,7 @@
                                 :disabled="!canSubmit"
                                 block
                             >
-                                {{ $t('earn.validate.confirm') }}
+                                {{ $t('earn.validate.view_rewards') }}
                             </button>
                             <template v-else>
                                 <button
@@ -509,7 +509,7 @@ export default class AddValidator extends Vue {
         }
 
         // Not a valid Node ID
-        if (!this.nodeId.includes('NodeID-')) {
+        if (!this.nodeId.includes('Node ID')) {
             this.err = this.$t('earn.validate.errs.id') as string
             return false
         }
@@ -676,7 +676,7 @@ input {
     font-weight: 400;
     letter-spacing: 0.5px;
     background-color: var(--bg-wallet);
-    color: var(--bg-primary-color-light);
+    color: var(--primary-color-light);
     border: 1px solid var(--bg-wallet-lighter);
 }
 
@@ -801,12 +801,6 @@ label {
 .expandable {
     p {
         font-size: 14px;
-    }
-    .v-chip {
-        background-color: var(--bg) !important;
-        .v-size--small {
-            border-radius: 0px;
-        }
     }
 }
 .tx_status {
