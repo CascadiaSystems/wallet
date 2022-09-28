@@ -1,6 +1,6 @@
 <template>
     <div class="currency_select">
-        <button @click="setType('AVAX')" :active="currency === 'AVAX'">AVAX</button>
+        <button @click="setType('SOPHON')" :active="currency === 'SOPHON'">SOPHON</button>
         <button @click="setType('USD')" :active="currency === 'USD'">USD</button>
     </div>
 </template>
@@ -21,26 +21,26 @@ export default class CurrencySelect extends Vue {
 .currency_select {
     display: flex;
     width: max-content;
-    background-color: var(--bg-light);
-    border-radius: 4px;
+    background-color: var(--bg);
     overflow: hidden;
 }
 
 button {
     margin: 0;
     border-radius: 0;
-    padding: 3px 6px;
-    font-size: 12px;
-    color: var(--primary-color-light);
+    padding: 0 8px;
+    font-size: 14px;
+    color: var(--bg-wallet-lighter);
     transition-duration: 0.2s;
+    width: 74px;
 
     &:hover {
-        background-color: var(--primary-color-light);
+        background-color: var(--primary-color);
         color: var(--bg);
     }
 
     &[active] {
-        background-color: var(--primary-color);
+        background-color: var(--primary-color-light);
         color: var(--bg);
     }
 }

@@ -72,7 +72,7 @@
                             <!--                                </v-chip>-->
                             <!--                            </v-chip-group>-->
                             <QrInput
-                                style="height: 40px; border-radius: 2px"
+                                style="height: 48px; border-radius: 0px"
                                 v-model="rewardIn"
                                 placeholder="Reward Address"
                                 class="reward_addr_in"
@@ -108,24 +108,24 @@
                         :reward-destination="rewardDestination"
                     ></ConfirmPage>
                 </transition-group>
-                <div>
+                <div style="border-left: 1px solid var(--bg-wallet-lighter)">
                     <div class="summary" v-if="!isSuccess">
                         <CurrencySelect v-model="currency_type"></CurrencySelect>
                         <div>
                             <label>
                                 {{ $t('earn.validate.summary.max_del') }}
-                                <Tooltip
+                                <!-- <Tooltip
                                     style="display: inline-block"
                                     :text="$t('earn.validate.summary.max_del_tooltip')"
                                 >
                                     <fa icon="question-circle"></fa>
-                                </Tooltip>
+                                </Tooltip> -->
                             </label>
                             <p v-if="currency_type === 'SOPHON'">{{ maxDelegationText }} SOPHON</p>
                             <p v-if="currency_type === 'USD'">${{ maxDelegationUsdText }} USD</p>
                         </div>
                         <div>
-                            <label>{{ $t('earn.validate.summary.duration') }} *</label>
+                            <label>{{ $t('earn.validate.summary.duration') }}</label>
                             <p>{{ durationText }}</p>
                         </div>
                         <div>
@@ -139,41 +139,42 @@
                         </div>
                         <div class="submit_box">
                             <label style="margin: 8px 0 !important">
-                                * {{ $t('earn.validate.summary.warn') }}
+                                {{ $t('earn.validate.summary.warn') }}
                             </label>
                             <p v-if="warnShortDuration" class="err">
                                 {{ $t('earn.validate.errs.duration_warn') }}
                             </p>
                             <p class="err">{{ err }}</p>
-                            <v-btn
+                            <button
                                 v-if="!isConfirm"
                                 @click="confirm"
-                                class="button_secondary"
+                                class="button_confirm"
                                 depressed
                                 :loading="isLoading"
                                 :disabled="!canSubmit"
                                 block
                             >
                                 {{ $t('earn.validate.confirm') }}
-                            </v-btn>
+                            </button>
                             <template v-else>
-                                <v-btn
+                                <button
                                     @click="submit"
-                                    class="button_secondary"
+                                    class="button_confirm"
                                     depressed
                                     :loading="isLoading"
                                     block
                                 >
                                     {{ $t('earn.validate.submit') }}
-                                </v-btn>
-                                <v-btn
+                                </button>
+                                <button
                                     text
+                                    class="button_confirm"
                                     @click="cancelConfirm"
                                     block
                                     style="color: var(--primary-color); margin-top: 20px"
                                 >
                                     {{ $t('earn.validate.cancel') }}
-                                </v-btn>
+                                </button>
                             </template>
                         </div>
                     </div>
@@ -204,7 +205,7 @@
                             <label>{{ $t('earn.validate.success.reason') }}</label>
                             <p>{{ txReason }}</p>
                         </div>
-                        <v-btn
+                        <button
                             @click="cancel"
                             block
                             class="button_secondary"
@@ -212,7 +213,7 @@
                             v-if="txStatus"
                         >
                             Back to Earn
-                        </v-btn>
+                        </button>
                     </div>
                 </div>
             </form>
@@ -713,7 +714,7 @@ label {
 }
 
 .submit_box {
-    .v-btn {
+    .button {
         margin-top: 14px;
     }
 }
@@ -724,7 +725,7 @@ label {
     > div {
         margin-bottom: 14px;
         p {
-            font-size: 24px;
+            font-size: 20px;
         }
     }
 
@@ -734,6 +735,13 @@ label {
     }
 }
 
+.button_confirm {
+    color: var(--bg);
+    background-color: var(--bg-wallet-lighter);
+    padding: 4px;
+    width: 100%;
+    text-align: center;
+}
 .success_cont {
     .check {
         font-size: 4em;
@@ -751,18 +759,17 @@ label {
 
 .reward_in {
     transition-duration: 0.2s;
-    &[type='local'] {
-        .reward_addr_in {
-            display: flex;
-            flex-direction: row-reverse;
-            opacity: 0.3;
-            user-select: none;
-            pointer-events: none;
-            border: 1px solid var(--bg-wallet-lighter);
-            background-color: var(--bg);
-            .readerIn {
-                border-right: 0px;
-            }
+    .reward_addr_in {
+        display: flex;
+        border-radius: 0px;
+        flex-direction: row-reverse;
+        user-select: none;
+        pointer-events: none;
+        border: 1px solid var(--bg-wallet-lighter);
+        background-color: var(--bg);
+        button {
+            border: 0px solid transparent !important;
+            border-left: 1px solid var(--bg-wallet-lighter) !important;
         }
     }
 }
@@ -791,6 +798,17 @@ label {
     }
 }
 
+.expandable {
+    p {
+        font-size: 14px;
+    }
+    .v-chip {
+        background-color: var(--bg) !important;
+        .v-size--small {
+            border-radius: 0px;
+        }
+    }
+}
 .tx_status {
     display: flex;
     justify-content: space-between;
