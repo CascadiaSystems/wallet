@@ -29,12 +29,12 @@ export default {
 
 .checkbox {
     .v-label {
-        color: var(--primary-color);
+        color: var(--primary-color-light);
     }
 
     .v-input--selection-controls__input {
         > * {
-            color: var(--primary-color) !important;
+            color: var(--primary-color-light) !important;
         }
     }
 

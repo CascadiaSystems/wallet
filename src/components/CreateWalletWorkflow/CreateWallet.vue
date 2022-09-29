@@ -205,8 +205,9 @@ export default class CreateWallet extends Vue {
         margin-top: main.$vertical-padding;
         margin-bottom: 36px;
         text-align: left;
-        font-size: main.$m-size;
+        font-size: 24px;
         font-weight: 400;
+        color: var(--primary-color);
     }
 }
 
@@ -290,6 +291,7 @@ a {
    ========================================== */
 
 .stage_2 {
+    max-width: 600px;
     margin: 0 auto;
     text-align: left;
     align-items: flex-start;
@@ -302,7 +304,9 @@ a {
 }
 
 .mneumonic_disp_col {
+    text-align: center;
     .mnemonic_disp {
+        margin: auto;
         max-width: 560px;
         justify-self: center;
         display: flex;
@@ -319,8 +323,7 @@ a {
     }
 
     .mnemonic_display {
-        background-color: var(--bg-light);
-        padding: 14px;
+        padding: 36px 0px;
     }
 
     .verified {
@@ -336,7 +339,15 @@ a {
         }
     }
 }
-
+.verify_cont {
+    width: 400px;
+    margin: auto;
+    padding-top: 24px;
+    padding-bottom: 36px;
+}
+.v-label {
+    flex-grow: 0 !important;
+}
 .phrase_disp_col {
     padding: 0 30px;
     width: 100%;
@@ -364,7 +375,7 @@ a {
         }
 
         p {
-            color: main.$primary-color-light;
+            color: var(--primary-color-light);
         }
     }
 
@@ -383,7 +394,7 @@ a {
             }
 
             &.description {
-                color: main.$primary-color-light !important;
+                color: var(--primary-color-light) !important;
             }
         }
     }
