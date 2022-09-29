@@ -6,57 +6,21 @@
                     <transition name="fade" mode="out-in">
                         <!-- PHASE 1 -->
                         <div v-if="!keyPhrase" class="stage_1">
-                            <div class="img_container">
-                                <img
-                                    v-if="$root.theme === 'day'"
-                                    src="@/assets/diamond-secondary.png"
-                                    alt
-                                />
-                                <img v-else src="@/assets/diamond-secondary-night.svg" alt />
-                            </div>
                             <h1>{{ $t('create.generate') }}</h1>
-                            <router-link to="/access" class="link">
-                                {{ $t('create.but_have') }}
-                            </router-link>
                             <div class="options">
-                                <button
-                                    class="ava_button but_generate button_secondary"
-                                    @click="createKey"
-                                >
+                                <button class="but_generate" @click="createKey">
                                     {{ $t('create.submit') }}
                                 </button>
-                                <!--                                <TorusGoogle class="torus_but"></TorusGoogle>-->
                             </div>
-                            <ToS></ToS>
 
-                            <router-link to="/" class="link">{{ $t('create.cancel') }}</router-link>
+                            <router-link to="/" class="link">
+                                <button class="cancel_button">{{ $t('create.cancel') }}</button>
+                            </router-link>
                         </div>
                         <!-- PHASE 2 -->
                         <div v-else class="stage_2">
                             <div class="cols">
-                                <!-- LEFT -->
                                 <div class="mneumonic_disp_col">
-                                    <div class="mnemonic_disp">
-                                        <mnemonic-display
-                                            :phrase="keyPhrase"
-                                            :bgColor="verificationColor"
-                                            class="mnemonic_display"
-                                        ></mnemonic-display>
-                                    </div>
-                                </div>
-                                <!-- RIGHT -->
-                                <div class="phrase_disp_col">
-                                    <template v-if="!isVerified">
-                                        <img
-                                            v-if="$root.theme === 'day'"
-                                            src="@/assets/keyphrase.png"
-                                            alt
-                                        />
-                                        <img v-else src="@/assets/keyphrase_night.svg" alt />
-                                    </template>
-                                    <template v-else>
-                                        <img src="@/assets/success.svg" alt />
-                                    </template>
                                     <header v-if="!isVerified">
                                         <h1>
                                             {{ $t('create.mnemonic_title') }}
@@ -69,8 +33,16 @@
                                         </h1>
                                         <p>{{ $t('create.success_desc') }}</p>
                                     </header>
+
+                                    <div class="mnemonic_disp">
+                                        <mnemonic-display
+                                            :phrase="keyPhrase"
+                                            :bgColor="verificationColor"
+                                            class="mnemonic_display"
+                                        ></mnemonic-display>
+                                    </div>
+
                                     <p class="warn" v-if="!isVerified">
-                                        <span class="label">{{ $t('create.attention') }}</span>
                                         <span class="description">{{ $t('create.warning') }}</span>
                                     </p>
                                     <!-- STEP 2a - VERIFY -->
@@ -85,7 +57,7 @@
                                             @complete="complete"
                                         ></VerifyMnemonic2>
                                         <button
-                                            class="but_primary ava_button button_secondary"
+                                            class="but_generate"
                                             @click="verifyMnemonic"
                                             :disabled="!canVerify"
                                         >
@@ -99,14 +71,17 @@
                                                 <Spinner v-if="isLoad" class="spinner"></Spinner>
                                                 <div v-else>
                                                     <button
-                                                        class="button_primary ava_button access generate"
+                                                        class="but_generate"
                                                         @click="access"
                                                         :disabled="!canSubmit"
                                                     >
                                                         {{ $t('create.success_submit') }}
                                                     </button>
+
                                                     <router-link to="/" class="link">
-                                                        Cancel
+                                                        <button class="cancel_button">
+                                                            {{ $t('create.cancel') }}
+                                                        </button>
                                                     </router-link>
                                                     <ToS style="margin: 30px 0 !important"></ToS>
                                                 </div>
@@ -215,7 +190,6 @@ export default class CreateWallet extends Vue {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--bg-light);
     padding: main.$container-padding;
     text-align: center;
     /*min-width: 1000px;*/
@@ -229,6 +203,7 @@ export default class CreateWallet extends Vue {
 
     h1 {
         margin-top: main.$vertical-padding;
+        margin-bottom: 36px;
         text-align: left;
         font-size: main.$m-size;
         font-weight: 400;
@@ -239,12 +214,8 @@ export default class CreateWallet extends Vue {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 15px;
-    padding-top: 15px;
-    border-top: 1px solid var(--primary-color-light);
 
     > * {
-        margin: 4px;
         font-size: 0.8rem;
     }
 
@@ -258,13 +229,51 @@ export default class CreateWallet extends Vue {
     background-color: #db3236;
     color: #fff;
 }
-
 .but_generate {
-    display: block;
-    height: max-content;
-    background-color: main.$secondary-color;
-}
+    width: 100%;
+    border-radius: 0px !important;
+    padding: 12px 24px;
+    min-width: 400px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase !important;
+    background-color: var(--primary-color-light);
+    color: var(--bg);
 
+    &:hover {
+        background-color: var(--primary-color);
+    }
+}
+.cancel_button {
+    width: 100%;
+    min-width: 400px;
+    margin-bottom: 22px;
+    border-radius: 0px !important;
+    padding: 12px 24px;
+    border-radius: 0px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase !important;
+    border: 1px solid var(--primary-color-light);
+    color: var(--primary-color-light);
+    background-color: var(--bg);
+
+    a {
+        text-decoration: none !important;
+    }
+
+    &:hover {
+        border: 1px solid var(--primary-color);
+        color: var(--primary-color);
+    }
+
+    &:disabled {
+        border: 1px solid var(--primary-color-light);
+        color: var(--primary-color-light);
+    }
+}
 .key_disp {
     margin: 30px auto;
     font-size: 12px;
@@ -273,7 +282,7 @@ export default class CreateWallet extends Vue {
 a {
     color: main.$primary-color-light !important;
     text-decoration: underline !important;
-    margin-top: 10px;
+    margin-top: 12px;
 }
 
 /* ==========================================
@@ -288,7 +297,7 @@ a {
 
 .cols {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     column-gap: 60px;
 }
 
