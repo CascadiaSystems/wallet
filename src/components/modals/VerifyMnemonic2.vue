@@ -14,8 +14,8 @@
                     </div>
                 </div>
             </div>
-            <p class="err">{{ err }}</p>
-            <button class="but_primary ava_button button_primary" @click="verify">Verify</button>
+            <p v-if="err" class="err">{{ err }}</p>
+            <button class="but_verify" @click="verify">Verify</button>
         </div>
     </modal>
 </template>
@@ -140,10 +140,10 @@ export default class VerifyMnemoni2 extends Vue {
 @use "../../main";
 
 .mnemonic_body {
-    padding: 30px;
+    padding: 36px 16px 16px 16px;
     text-align: center;
     max-width: 100%;
-    width: 450px;
+    width: 400px;
 }
 
 .but_primary {
@@ -160,6 +160,27 @@ export default class VerifyMnemoni2 extends Vue {
 }
 
 .question_row {
-    margin-bottom: 14px;
+    margin-bottom: 24px;
+    p {
+        margin-bottom: 8px;
+    }
+}
+
+.but_verify {
+    width: 100%;
+    margin-top: 26px;
+    border-radius: 0px !important;
+    padding: 4px 24px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase !important;
+    background-color: var(--primary-color-light);
+    color: var(--bg);
+
+    &:hover {
+        background-color: var(--primary-color);
+    }
 }
 </style>

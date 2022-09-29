@@ -133,7 +133,7 @@ export default {
 .remember {
     .v-label {
         font-size: main.$s-size !important;
-        color: var(--primary-color);
+        color: var(--primary-color-light);
     }
 
     .v-messages__message {

@@ -45,20 +45,20 @@ export default class MnemonicDisplay extends Vue {
 .mnemonic_display {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 6px;
-    row-gap: 6px;
+    grid-gap: 8px;
+    row-gap: 8px;
     font-size: 12px;
 }
 
 .word {
     display: flex;
+    align-items: center;
     overflow: hidden;
     font-weight: 700;
-
+    border: 1px solid var(--bg-wallet-lighter);
     background-color: var(--bg);
-
+    padding: 4px 12px;
     > * {
-        padding: 16px 6px;
     }
 }
 

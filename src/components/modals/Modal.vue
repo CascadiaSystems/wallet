@@ -46,21 +46,19 @@ export default class Modal extends Vue {
 @use '../../main';
 
 .modal_topbar {
-    background-color: var(--bg);
-    border-bottom: var(--bg);
     color: var(--primary-color);
-    border-bottom: 2px solid var(--bg-wallet);
+    border-bottom: 1px solid var(--bg-wallet-lighter);
     position: relative;
-    padding: 10px 22px;
+    padding: 16px 22px;
     display: flex;
 }
 
 .modal_title {
-    font-size: 22px;
-    text-align: left;
+    text-align: center;
+    font-size: 24px;
     flex-grow: 1;
     margin: 0;
-    font-weight: lighter;
+    font-weight: 400;
 }
 
 .modalClose {
@@ -103,11 +101,11 @@ export default class Modal extends Vue {
     width: max-content;
     max-width: 90%;
     min-height: 30px;
-    background-color: var(--bg);
+    background-color: var(--bg-light);
+    border: 1px solid var(--bg-wallet-lighter);
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
     margin: auto;
     z-index: 2;
-    border-radius: 22px;
     overflow: hidden;
 }
 
