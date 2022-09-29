@@ -52,13 +52,13 @@ export default class MnemonicDisplay extends Vue {
 
 .word {
     display: flex;
+    align-items: center;
     overflow: hidden;
     font-weight: 700;
-
+    border: 1px solid var(--bg-wallet-lighter);
     background-color: var(--bg);
-
+    padding: 4px 12px;
     > * {
-        padding: 16px 6px;
     }
 }
 

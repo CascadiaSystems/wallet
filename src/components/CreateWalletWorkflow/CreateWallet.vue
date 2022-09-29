@@ -291,7 +291,7 @@ a {
    ========================================== */
 
 .stage_2 {
-    max-width: 600px;
+    max-width: 500px;
     margin: 0 auto;
     text-align: left;
     align-items: flex-start;
@@ -307,7 +307,7 @@ a {
     text-align: center;
     .mnemonic_disp {
         margin: auto;
-        max-width: 560px;
+        max-width: 450px;
         justify-self: center;
         display: flex;
         flex-direction: column;
@@ -338,6 +338,59 @@ a {
             }
         }
     }
+    header {
+        h1 {
+            margin-bottom: 8px;
+            font-size: 24px;
+            line-height: 1.25em;
+            font-weight: 400;
+        }
+
+        p {
+            color: var(--primary-color-light) !important;
+        }
+    }
+
+    .warn {
+        span {
+            display: block;
+            font-size: main.$s-size;
+            font-weight: 700;
+            text-transform: uppercase;
+
+            &.label {
+                color: main.$secondary-color;
+                text-transform: uppercase;
+            }
+
+            &.description {
+                text-transform: uppercase;
+                color: var(--primary-color-light) !important;
+            }
+        }
+    }
+
+    .access_cont {
+        text-align: left;
+        flex-direction: column;
+
+        .submit {
+            display: flex;
+            flex-direction: row;
+            margin-top: 14px;
+            text-align: left;
+            //flex-direction: column;
+            //align-items: flex-start;
+            //justify-content: space-between;
+
+            .access {
+            }
+
+            .link {
+                margin-left: 40px;
+            }
+        }
+    }
 }
 .verify_cont {
     width: 400px;
@@ -347,6 +400,7 @@ a {
 }
 .v-label {
     flex-grow: 0 !important;
+    color: var(--primary-color-light) !important;
 }
 .phrase_disp_col {
     padding: 0 30px;
@@ -369,13 +423,13 @@ a {
     header {
         h1 {
             margin-top: 10px;
-            font-size: main.$xl-size;
+            font-size: 24px;
             line-height: 1.25em;
             font-weight: 400;
         }
 
         p {
-            color: var(--primary-color-light);
+            color: var(--primary-color-light) !important;
         }
     }
 
@@ -394,6 +448,7 @@ a {
             }
 
             &.description {
+                text-transform: uppercase;
                 color: var(--primary-color-light) !important;
             }
         }
@@ -491,12 +546,6 @@ a {
                 }
             }
         }
-    }
-
-    .phrase_disp_col {
-        padding: 30px 0;
-        align-items: center;
-
         img {
             width: main.$img-size-mobile;
             height: main.$img-size-mobile;
@@ -504,12 +553,13 @@ a {
 
         header {
             h1 {
-                font-size: main.$xl-size-mobile;
+                font-size: 24px;
+                font-weight: 400;
+                padding-bottom: 8px;
             }
         }
 
         .warn {
-            margin-top: main.$vertical-padding-mobile !important;
         }
 
         .access_cont {
@@ -529,6 +579,11 @@ a {
                 }
             }
         }
+    }
+
+    .phrase_disp_col {
+        padding: 30px 0;
+        align-items: center;
     }
 }
 </style>
