@@ -55,11 +55,10 @@ export default class Modal extends Vue {
 
 .modal_title {
     text-align: center;
-    font-size: 22px;
-    text-align: left;
+    font-size: 24px;
     flex-grow: 1;
     margin: 0;
-    font-weight: lighter;
+    font-weight: 400;
 }
 
 .modalClose {

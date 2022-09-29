@@ -140,7 +140,7 @@ export default class VerifyMnemoni2 extends Vue {
 @use "../../main";
 
 .mnemonic_body {
-    padding: 16px;
+    padding: 36px 16px 16px 16px;
     text-align: center;
     max-width: 100%;
     width: 400px;
@@ -161,6 +161,9 @@ export default class VerifyMnemoni2 extends Vue {
 
 .question_row {
     margin-bottom: 24px;
+    p {
+        margin-bottom: 8px;
+    }
 }
 
 .but_verify {
