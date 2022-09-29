@@ -78,7 +78,7 @@
         }
     },
     "create": {
-        "generate": "Generate a new key phrase to setup your Avalanche Wallet.",
+        "generate": "Generate a new key phrase to setup your Sophon Wallet.",
         "but_have": "Already have a wallet?",
         "submit": "Generate Key Phrase",
         "cancel": "Cancel",
