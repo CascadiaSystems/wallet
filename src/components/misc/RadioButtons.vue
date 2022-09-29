@@ -5,7 +5,7 @@
             :key="key"
             @click="select(key)"
             :active="selection === key"
-            class="hover_border"
+            class="input_border"
         >
             {{ labels[i] }}
         </button>
@@ -37,13 +37,12 @@ button {
     white-space: nowrap;
     font-weight: bold;
     font-size: 14px;
-    padding: 4px 14px;
+    padding: 4px 12px;
     border: 1px solid transparent;
     color: var(--primary-color-light);
     background-color: var(--bg-wallet);
     border-radius: 4px;
     margin-right: 6px;
-    margin-bottom: 6px;
     transition-duration: 0.2s;
     font-family: Inconsolata, monospace;
 
@@ -57,7 +56,10 @@ button {
         background-color: var(--primary-color);
     }
 }
-
+.input_border {
+    background-color: var(--bg);
+    color: var(--primary-color-light);
+}
 @include main.medium-device {
     button {
         font-size: 11px;

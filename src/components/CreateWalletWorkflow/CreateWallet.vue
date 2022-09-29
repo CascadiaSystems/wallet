@@ -438,8 +438,8 @@ a {
 
         span {
             display: block;
-            font-size: main.$s-size;
-            font-weight: 700;
+            font-size: 16px;
+            font-weight: 400;
             text-transform: uppercase;
 
             &.label {
