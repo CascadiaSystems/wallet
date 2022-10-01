@@ -107,7 +107,7 @@
                         :reward-destination="rewardDestination"
                     ></ConfirmPage>
                 </transition-group>
-                <div style="border-left: 1px solid var(--bg-wallet-lighter)">
+                <div>
                     <div class="summary" v-if="!isSuccess">
                         <CurrencySelect v-model="currency_type"></CurrencySelect>
                         <div>
@@ -722,7 +722,8 @@ label {
 }
 
 .summary {
-    border-left: 2px solid var(--bg-light);
+    height: 100%;
+    border-left: 1px solid var(--bg-wallet-lighter);
     padding-left: 30px;
     > div {
         margin-bottom: 14px;
@@ -821,7 +822,6 @@ label {
     padding: 4px 12px;
     margin-bottom: 6px;
 }
-
 @include main.mobile-device {
     form {
         grid-template-columns: 1fr;
