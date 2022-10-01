@@ -58,7 +58,6 @@
                                 <button
                                     @click="rewardSelect('custom')"
                                     :selected="this.rewardDestination === 'custom'"
-                                    style="color: var(--bg-wallet-lighter)"
                                 >
                                     {{ $t('earn.delegate.form.reward.chip_2') }}
                                 </button>
@@ -759,6 +758,7 @@ label {
 
 .reward_in {
     transition-duration: 0.2s;
+    color: var(--bg-wallet-lighter);
     .reward_addr_in {
         display: flex;
         border-radius: 0px;
@@ -771,21 +771,24 @@ label {
             border: 0px solid transparent !important;
             border-left: 1px solid var(--bg-wallet-lighter) !important;
         }
+        input {
+            color: var(--bg-wallet-lighter);
+        }
+        input.pk_in::placeholder {
+            color: var(--bg-wallet-lighter) !important;
+        }
     }
 }
-
 .reward_tabs {
     margin-bottom: 8px;
-    font-size: 13px;
+    font-size: 14px;
+    line-height: 24px;
     color: var(--primary-color-light);
     padding: 0;
     button {
-        color: var(--primary-color-light);
+        color: var(--bg-wallet-lighter);
         background-color: var(--bg);
-        padding: 2px 8px;
-        &:hover {
-            color: var(--primary-color);
-        }
+        padding: 0px 8px;
 
         &[selected] {
             color: var(--bg);
