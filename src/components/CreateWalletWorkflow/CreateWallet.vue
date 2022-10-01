@@ -246,6 +246,10 @@ export default class CreateWallet extends Vue {
     &:hover {
         background-color: var(--primary-color);
     }
+
+    &:disabled {
+        background-color: var(--bg-wallet-lighter) !important;
+    }
 }
 .cancel_button {
     width: 100%;
