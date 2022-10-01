@@ -677,6 +677,9 @@ input {
     background-color: var(--bg-wallet);
     color: var(--primary-color-light);
     border: 1px solid var(--bg-wallet-lighter);
+    &::placeholder {
+        color: var(--bg-wallet-lighter) !important;
+    }
 }
 
 .desc {
@@ -758,7 +761,6 @@ label {
 
 .reward_in {
     transition-duration: 0.2s;
-    color: var(--bg-wallet-lighter);
     .reward_addr_in {
         display: flex;
         border-radius: 0px;
@@ -773,6 +775,7 @@ label {
         }
         input {
             color: var(--bg-wallet-lighter);
+            font-size: 14px;
         }
         input.pk_in::placeholder {
             color: var(--bg-wallet-lighter) !important;

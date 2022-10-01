@@ -399,12 +399,12 @@ textarea {
 }
 
 .v-chip {
-    background-color: var(--bg-light) !important;
-    color: var(--primary-color) !important;
+    background-color: var(--bg) !important;
+    color: var(--bg-wallet-lighter) !important;
     border-radius: 0px !important;
 }
 .v-chip--active {
-    background-color: var(--primary-color) !important;
+    background-color: var(--primary-color-light) !important;
     color: var(--bg-wallet) !important;
 }
 
