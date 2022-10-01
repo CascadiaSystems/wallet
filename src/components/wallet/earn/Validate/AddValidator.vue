@@ -58,7 +58,6 @@
                                 <button
                                     @click="rewardSelect('custom')"
                                     :selected="this.rewardDestination === 'custom'"
-                                    style="color: var(--bg-wallet-lighter)"
                                 >
                                     {{ $t('earn.delegate.form.reward.chip_2') }}
                                 </button>
@@ -108,7 +107,7 @@
                         :reward-destination="rewardDestination"
                     ></ConfirmPage>
                 </transition-group>
-                <div style="border-left: 1px solid var(--bg-wallet-lighter)">
+                <div>
                     <div class="summary" v-if="!isSuccess">
                         <CurrencySelect v-model="currency_type"></CurrencySelect>
                         <div>
@@ -678,6 +677,9 @@ input {
     background-color: var(--bg-wallet);
     color: var(--primary-color-light);
     border: 1px solid var(--bg-wallet-lighter);
+    &::placeholder {
+        color: var(--bg-wallet-lighter) !important;
+    }
 }
 
 .desc {
@@ -720,7 +722,8 @@ label {
 }
 
 .summary {
-    border-left: 2px solid var(--bg-light);
+    height: 100%;
+    border-left: 1px solid var(--bg-wallet-lighter);
     padding-left: 30px;
     > div {
         margin-bottom: 14px;
@@ -771,21 +774,25 @@ label {
             border: 0px solid transparent !important;
             border-left: 1px solid var(--bg-wallet-lighter) !important;
         }
+        input {
+            color: var(--bg-wallet-lighter);
+            font-size: 14px;
+        }
+        input.pk_in::placeholder {
+            color: var(--bg-wallet-lighter) !important;
+        }
     }
 }
-
 .reward_tabs {
     margin-bottom: 8px;
-    font-size: 13px;
+    font-size: 14px;
+    line-height: 24px;
     color: var(--primary-color-light);
     padding: 0;
     button {
-        color: var(--primary-color-light);
+        color: var(--bg-wallet-lighter);
         background-color: var(--bg);
-        padding: 2px 8px;
-        &:hover {
-            color: var(--primary-color);
-        }
+        padding: 0px 8px;
 
         &[selected] {
             color: var(--bg);
@@ -815,7 +822,6 @@ label {
     padding: 4px 12px;
     margin-bottom: 6px;
 }
-
 @include main.mobile-device {
     form {
         grid-template-columns: 1fr;

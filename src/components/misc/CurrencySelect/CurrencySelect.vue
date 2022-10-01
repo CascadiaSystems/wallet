@@ -35,7 +35,7 @@ button {
     width: 74px;
 
     &:hover {
-        background-color: var(--primary-color);
+        background-color: var(--bg-wallet-lighter);
         color: var(--bg);
     }
 

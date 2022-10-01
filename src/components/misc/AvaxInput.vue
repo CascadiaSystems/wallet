@@ -86,25 +86,30 @@ export default class AvaxInput extends Vue {
     width: 100%;
 
     .amt_in {
+        background-color: var(--bg-wallet);
         color: var(--primary-color);
-        font-size: 15px;
+        font-size: 16px;
         flex-grow: 1;
         flex-shrink: 1;
         display: block;
         box-sizing: content-box;
         outline: none !important;
         border: none !important;
-        //padding: 0 12px !important;
     }
 
-    .ticker,
-    .amt_in,
-    .max_but {
+    .ticker {
         background-color: var(--bg-wallet);
         color: var(--primary-color-light);
     }
+    .max_but {
+        background-color: var(--bg-wallet);
+        color: var(--bg-wallet-lighter);
+    }
 }
 
+input::placeholder {
+    color: var(--primary-color-light);
+}
 .balance {
     display: grid;
     column-gap: 10px;
@@ -153,7 +158,6 @@ export default class AvaxInput extends Vue {
 
 .ticker {
     padding: 11px 12px;
-    color: var(--primary-color-light);
 }
 
 p {
@@ -161,9 +165,8 @@ p {
 }
 .max_but {
     font-size: 16px;
-    opacity: 0.4;
     &:hover {
-        opacity: 1;
+        color: var(--primary-color-light);
     }
 }
 

@@ -5,7 +5,9 @@
                 <h1>{{ $t('earn.title') }}</h1>
                 <h1 class="subtitle" v-if="pageNow">/ {{ subtitle }}</h1>
             </div>
-            <div class="close" @click="cancel" v-if="pageNow"><fa icon="times"></fa></div>
+            <div class="close" @click="cancel" v-if="pageNow">
+                <img src="@/assets/cross.svg" />
+            </div>
         </div>
         <transition name="fade" mode="out-in">
             <div v-if="!pageNow">
@@ -215,7 +217,8 @@ export default class Earn extends Vue {
     .close {
         margin-right: 0.5em;
         &:hover {
-            color: var(--primary-color-light);
+            color: var(--primary-color);
+            fill: var(--primary-color);
             cursor: pointer;
         }
     }
