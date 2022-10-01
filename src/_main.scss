@@ -420,6 +420,11 @@ textarea {
 
 .v-input--checkbox {
     label {
+        color: var(--primary-color-light) !important;
+    }
+}
+.v-input--is-label-active {
+    label {
         color: var(--primary-color) !important;
     }
 }
