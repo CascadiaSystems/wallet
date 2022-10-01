@@ -5,7 +5,6 @@
                 <b-col md="12" lg="10">
                     <div class="home_card">
                         <div class="menus">
-                            <AccountsFound class="accounts_menu"></AccountsFound>
                             <div class="options">
                                 <router-link data-cy="access" to="/access" class="menu_option">
                                     {{ $t('home.access.submit') }}

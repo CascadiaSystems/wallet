@@ -45,25 +45,24 @@ export default class MnemonicDisplay extends Vue {
 .mnemonic_display {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 8px;
-    row-gap: 8px;
-    font-size: 12px;
+    grid-gap: 12px;
+    row-gap: 12px;
+    font-size: 14px;
 }
 
 .word {
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     overflow: hidden;
-    font-weight: 700;
+    font-weight: 400;
     border: 1px solid var(--bg-wallet-lighter);
     background-color: var(--bg);
-    padding: 4px 12px;
-    > * {
-    }
+    padding: 3px 12px;
 }
 
 .index {
-    width: 22px;
+    width: 12px;
     box-sizing: content-box;
     text-align: center;
     user-select: none;
@@ -72,10 +71,13 @@ export default class MnemonicDisplay extends Vue {
 }
 
 .phrase_word {
-    text-align: center;
+    text-align: right;
     /*overflow: scroll;*/
     white-space: nowrap;
     flex-grow: 1;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--primary-color);
 }
 
 p {
@@ -98,7 +100,7 @@ span {
 @include main.mobile-device {
     .word {
         * {
-            padding: 4px 2px;
+            padding: 3px 2px;
         }
     }
 

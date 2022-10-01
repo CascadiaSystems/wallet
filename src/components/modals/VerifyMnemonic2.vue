@@ -162,7 +162,7 @@ export default class VerifyMnemoni2 extends Vue {
 .question_row {
     margin-bottom: 24px;
     p {
-        margin-bottom: 8px;
+        margin-bottom: 8px !important;
     }
 }
 

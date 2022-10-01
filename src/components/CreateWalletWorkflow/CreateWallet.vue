@@ -255,6 +255,7 @@ export default class CreateWallet extends Vue {
     padding: 12px 24px;
     border-radius: 0px;
     font-weight: 400;
+    font-size: 16px;
     letter-spacing: 0.5px;
     text-transform: uppercase !important;
     border: 1px solid var(--primary-color-light);
@@ -307,7 +308,7 @@ a {
     text-align: center;
     .mnemonic_disp {
         margin: auto;
-        max-width: 450px;
+        max-width: 425px;
         justify-self: center;
         display: flex;
         flex-direction: column;
@@ -365,6 +366,8 @@ a {
 
             &.description {
                 text-transform: uppercase;
+                font-size: 16px;
+                font-weight: 400;
                 color: var(--primary-color-light) !important;
             }
         }
@@ -449,6 +452,8 @@ a {
 
             &.description {
                 text-transform: uppercase;
+                font-size: 16px;
+                font-weight: 400;
                 color: var(--primary-color-light) !important;
             }
         }

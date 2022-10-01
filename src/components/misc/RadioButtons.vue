@@ -35,20 +35,15 @@ export default class RadioButtons extends Vue {
 button {
     word-break: normal;
     white-space: nowrap;
-    font-weight: bold;
+    font-weight: 400;
     font-size: 14px;
     padding: 4px 12px;
     border: 1px solid transparent;
     color: var(--primary-color-light);
     background-color: var(--bg-wallet);
-    border-radius: 4px;
     margin-right: 6px;
     transition-duration: 0.2s;
     font-family: Inconsolata, monospace;
-
-    //&:hover {
-    //    border-color: var(--bg-light);
-    //}
 
     &[active] {
         color: var(--bg-wallet);
