@@ -4,21 +4,21 @@
         <div class="cols" v-else>
             <div class="node_col">
                 <button @click="selected = null" class="close_but">
-                    <img src="/img/icons/refresh.svg" />
+                    <img src="/img/icons/earn-refresh.svg" />
                     Change Node
                 </button>
                 <NodeCard :node="selected"></NodeCard>
             </div>
             <transition-group name="fade" mode="out-in">
                 <div class="ins_col" key="form" v-show="!isConfirm">
-                    <div style="margin-bottom: 30px">
+                    <div style="margin-bottom: 16px">
                         <h4>{{ $t('earn.delegate.form.period.label') }}</h4>
                         <p class="desc">
                             {{ $t('earn.delegate.form.period.desc') }}
                         </p>
                         <DateForm @change_end="setEnd" :max-end-date="endMaxDate"></DateForm>
                     </div>
-                    <div style="margin: 30px 0; margin-bottom: 50px">
+                    <div style="margin: 16px 0">
                         <h4>{{ $t('earn.delegate.form.amount.label') }}</h4>
                         <p class="desc">
                             {{ $t('earn.delegate.form.amount.desc') }}
@@ -28,7 +28,7 @@
                         <!--                        </p>-->
                         <AvaxInput v-model="stakeAmt" :max="maxAmt" class="amt_in"></AvaxInput>
                     </div>
-                    <div class="reward_in" style="margin: 30px 0" :type="rewardDestination">
+                    <div class="reward_in" style="margin: 16px 0" :type="rewardDestination">
                         <h4>{{ $t('earn.delegate.form.reward.label') }}</h4>
                         <p class="desc">
                             {{ $t('earn.delegate.form.reward.desc') }}

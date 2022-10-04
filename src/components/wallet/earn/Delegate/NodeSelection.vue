@@ -71,14 +71,19 @@ export default class NodeSelection extends Vue {
     border: 1px solid var(--bg-wallet-lighter);
     margin-left: 12px;
     color: var(--primary-color-light);
-    ::placeholder {
+    &::placeholder {
         color: var(--bg-wallet-lighter);
     }
 }
 
 .rigt_but {
     float: right;
-
+    img {
+        opacity: 0.7;
+        &:hover {
+            opacity: 1;
+        }
+    }
     button {
         color: var(--primary-color-light);
         display: flex;

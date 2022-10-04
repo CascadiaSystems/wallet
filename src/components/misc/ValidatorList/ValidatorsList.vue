@@ -12,10 +12,10 @@
                 <thead>
                     <tr class="header_tr">
                         <th>{{ $t('earn.delegate.list.id') }}</th>
-                        <th style="text-align: right">
+                        <th style="text-align: left">
                             {{ $t('earn.delegate.list.val_stake') }}
                         </th>
-                        <th style="text-align: right">
+                        <th style="text-align: left">
                             {{ $t('earn.delegate.list.aval_stake') }}
                         </th>
                         <th>
@@ -24,16 +24,7 @@
                             </Tooltip>
                         </th>
                         <th style="text-align: right">{{ $t('earn.delegate.list.end') }}</th>
-                        <!--                        <th>-->
-                        <!--                            {{ $t('earn.delegate.list.up') }}-->
-                        <!--                            <Tooltip-->
-                        <!--                                style="display: inline-block"-->
-                        <!--                                :text="$t('earn.delegate.list.up_tip')"-->
-                        <!--                            >-->
-                        <!--                                <fa icon="question-circle"></fa>-->
-                        <!--                            </Tooltip>-->
-                        <!--                        </th>-->
-                        <th>{{ $t('earn.delegate.list.fee') }}</th>
+                        <th style="text-align: center">{{ $t('earn.delegate.list.fee') }}</th>
                         <th style="text-align: right">{{ $t('earn.delegate.list.action') }}</th>
                     </tr>
                 </thead>
@@ -129,20 +120,13 @@ export default class ValidatorsList extends Vue {
 }
 
 .table_cont {
-    overflow: scroll;
     max-height: 450px;
 }
 
 table {
     width: 100%;
-    border-collapse: collapse;
-}
-
-thead {
-    border-bottom: 1px solid var(--bg-wallet-lighter);
-}
-
-tr {
+    border-collapse: separate;
+    border-spacing: 0;
 }
 
 th {
@@ -151,6 +135,7 @@ th {
     padding: 2px 14px 8px;
     font-size: 14px;
     background-color: var(--bg-wallet-light);
+    border-bottom: 1px solid var(--bg-wallet-lighter);
 }
 
 .empty_list {
