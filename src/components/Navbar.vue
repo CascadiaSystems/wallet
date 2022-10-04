@@ -4,13 +4,9 @@
         <router-link to="/" class="logo">
             <h1>Sophon Wallet</h1>
         </router-link>
-        <router-link to="/" class="logo">
-            <h1>Sophon Wallet</h1>
-        </router-link>
         <v-spacer></v-spacer>
 
         <div class="buts_right">
-            <DayNightToggle class="action_but"></DayNightToggle>
             <template v-if="isAuth">
                 <button @click="logout">{{ $t('logout.button') }}</button>
             </template>
@@ -34,7 +30,6 @@
             <v-list dense nav>
                 <div style="display: flex; justify-content: space-between; padding: 4px 8px">
                     <h1>Sophon Wallet</h1>
-                    <DayNightToggle class="action_but"></DayNightToggle>
                 </div>
                 <template v-if="isAuth">
                     <!-- <router-link to="/wallet">{{ $t('wallet.sidebar.portfolio') }}</router-link>
@@ -73,7 +68,6 @@
 import 'reflect-metadata'
 import { Vue, Component, Prop } from 'vue-property-decorator'
 import LanguageSelect from './misc/LanguageSelect/LanguageSelect.vue'
-import DayNightToggle from '@/components/misc/DayNightToggle.vue'
 import NetworkMenu from './NetworkSettings/NetworkMenu.vue'
 import ConfirmLogout from '@/components/modals/ConfirmLogout.vue'
 import AccountMenu from '@/components/wallet/sidebar/AccountMenu.vue'
@@ -81,7 +75,6 @@ import AccountMenu from '@/components/wallet/sidebar/AccountMenu.vue'
     components: {
         AccountMenu,
         NetworkMenu,
-        DayNightToggle,
         ConfirmLogout,
         LanguageSelect,
     },
@@ -96,6 +89,11 @@ export default class Navbar extends Vue {
     logout(): void {
         // @ts-ignore
         this.$refs.logout.open()
+    }
+
+    mounted() {
+        localStorage.setItem('theme', 'night')
+        document.documentElement.setAttribute('data-theme', 'night')
     }
 }
 </script>
@@ -127,7 +125,7 @@ button {
         width: 100%;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         color: var(--primary-color-light) !important;
 
         &:hover {
