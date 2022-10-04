@@ -102,7 +102,7 @@ export default class NodeCard extends Vue {
     //width: max-content;
 
     > div {
-        padding: 16px 0px;
+        padding: 8px 0px;
     }
 }
 

@@ -1,13 +1,12 @@
 <template>
     <tr class="validator_row">
-        <td class="id">{{ validator.nodeID }}</td>
+        <td class="id">{{ validator.nodeID.split('-')[1] }}</td>
         <td class="amount">{{ amtText }}</td>
         <td class="amount">{{ remainingAmtText }}</td>
         <td style="text-align: center">{{ numDelegators }}</td>
-        <td>{{ remainingTimeText }}</td>
-        <!--        <td>{{ uptimeText }}</td>-->
-        <td>{{ feeText }}%</td>
-        <td>
+        <td style="text-align: right">{{ remainingTimeText }}</td>
+        <td style="text-align: center">{{ feeText }}%</td>
+        <td style="padding: 8px; text-align: right">
             <button class="button_select" @click="select">Select</button>
         </td>
     </tr>
@@ -122,7 +121,6 @@ export default class ValidatorsList extends Vue {
 .amount {
     text-align: left;
 }
-
 .button_select {
     font-size: 14px;
     color: var(--bg);
