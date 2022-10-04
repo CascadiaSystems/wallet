@@ -312,7 +312,7 @@ a {
     text-align: center;
     .mnemonic_disp {
         margin: auto;
-        max-width: 425px;
+        max-width: 500px;
         justify-self: center;
         display: flex;
         flex-direction: column;
