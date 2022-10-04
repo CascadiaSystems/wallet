@@ -53,7 +53,7 @@ export default class MnemonicDisplay extends Vue {
 .word {
     box-sizing: border-box;
     display: flex;
-    align-items: center;
+    align-items: baseline;
     overflow: hidden;
     font-weight: 400;
     border: 1px solid var(--bg-wallet-lighter);
